@@ -3,11 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Prime Solo Project</title>
-    <script src="../vendors/angular.min.js" charset="utf-8"></script>
-    <script src="../scripts/clientScript.js" charset="utf-8"></script>
-  </head>
-  <body ng-app= "myApp" ng-controller="testController">
-    <h1> Hello World!</h1>
+    <script src="/vendors/angular.min.js" charset="utf-8"></script>
+    <script src="/vendors/angular-route.min.js" charset="utf-8"></script>
+    <script src="/scripts/clientScript.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/viewOneCtrl.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/viewTwoCtrl.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/viewThreeCtrl.js" charset="utf-8"></script>
 
+
+  </head>
+  <body ng-app="myApp">
+    <h1> Hello World!</h1>
+    <ul>
+      <li><a href="#viewOne"> view one</a></li>
+      <li><a href="#viewTwo">view two</a></li>
+      <li><a href="#viewThree"> view three</a></li>
+    </ul>
+    <main ng-view></main>
   </body>
 </html>
