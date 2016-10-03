@@ -2,7 +2,7 @@
   "name": "prime_solo_project",
   "version": "1.0.0",
   "description": "Solo Project for Prime Digital Academy",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/app.js"
@@ -13,7 +13,6 @@
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
     "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "pg": "^6.1.0"
+    "express": "^4.14.0"
   }
 }

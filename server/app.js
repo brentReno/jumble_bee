@@ -1,3 +1,4 @@
+//requires
 var express = require('express');
 var app = express();
 var path = require("path");
@@ -6,6 +7,7 @@ var urlEncodedParser = bodyParser.urlencoded({extended:false});
 
 //set port decision
 app.set("port", (process.env.PORT || 3030));
+
 
 //spin up server
 app.listen(app.get("port"), function(){
