@@ -8,9 +8,9 @@ var myApp = angular.module("myApp", ["ngRoute"]);
 myApp.config(["$routeProvider", function($routeProvider){
   $routeProvider.
   //home
-  when("/viewOne", {
-    templateUrl:'/views/partials/viewOne.html',
-    controller:'viewOneController'
+  when("/home", {
+    templateUrl:'/views/partials/home.html',
+    controller:'homeController'
   }).
   //load
   when("/viewTwo", {

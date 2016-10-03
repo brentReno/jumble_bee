@@ -1,3 +1,3 @@
-myApp.controller("viewTwoController", ["$scope", function($scope){
+myApp.controller("viewFiveController", ["$scope", function($scope){
   console.log("This is view five");
 }]);
