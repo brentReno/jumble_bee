@@ -6,8 +6,9 @@ myApp.controller("createTestController", ["$scope", function($scope){
     console.log("in showInputs");
     //collect the number of words
     numWords = $scope.numWordsIn;
-    quizName = $scope.nameIn;
-    console.log(numWords,quizName);
     //collect the name of the quiz
+      quizName = $scope.nameIn;
+      console.log(numWords,quizName);
+      $scope.showInputs= false;
   };
 }]);
