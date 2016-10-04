@@ -13,24 +13,24 @@ myApp.config(["$routeProvider", function($routeProvider){
     controller:'homeController'
   }).
   //load
-  when("/viewTwo", {
-    templateUrl:'/views/partials/viewTwo.html',
-    controller:'viewTwoController'
+  when("/loadTest", {
+    templateUrl:'/views/partials/loadTest.html',
+    controller:'loadTestController'
   }).
   //create
-  when("/viewThree", {
-    templateUrl:'/views/partials/viewThree.html',
-    controller:'viewThreeController'
+  when("/createTest", {
+    templateUrl:'/views/partials/createTest.html',
+    controller:'createTestController'
   }).
   //upload
-  when("/viewFour",{
-    templateUrl:'/views/partials/viewFour.html',
-    controller: 'viewFourController'
+  when("/randomTest",{
+    templateUrl:'/views/partials/randomTest.html',
+    controller: 'randomTestController'
   }).
   //play game
-  when("/viewFive",{
-    templateUrl:'/views/partials/viewFive.html',
-    controller: 'viewFiveController'
+  when("/playGame",{
+    templateUrl:'/views/partials/playGame.html',
+    controller: 'playGameController'
   }).
   otherwise({
     redirectTo:"/viewOne"
