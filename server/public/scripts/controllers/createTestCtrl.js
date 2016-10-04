@@ -1,5 +1,6 @@
 var numWords;
 var quizName;
+var range =[];
 myApp.controller("createTestController", ["$scope", function($scope){
   console.log("This is Create");
   $scope.showInputs = function(){
@@ -10,5 +11,10 @@ myApp.controller("createTestController", ["$scope", function($scope){
       quizName = $scope.nameIn;
       console.log(numWords,quizName);
       $scope.showInputs= false;
+      // create range
+      for (var i = 0; i <numWords; i++) {
+        range.push(i);
+      }
+      $scope.range=range;
   };
 }]);
