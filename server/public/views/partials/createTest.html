@@ -10,7 +10,7 @@
   <button class="col-xs-1 col-xs-offset-6" ng-click="showInputs()">Next</button>
 </div>
 <div class ="row" id="inputs" ng-hide="showInputs">
-  <p>This is where the inputs go</p>
   <div data-ng-repeat="i in range">
-    <input type="text" name="name" value="">
+    <input type="text" name="name" value="" id={{i+1}}>
 </div>
+<button ng-repeat-end ng-click="createQuiz()"> Create Quiz </button>
