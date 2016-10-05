@@ -31,6 +31,12 @@ app.listen(app.get("port"), function(){
 
 app.post("/create", function(req,res){
   console.log("hit the post route with:", req.body);
+  var newQuiz = new Quiz({
+    name:req.body.quiz_name,
+    words:req.body.quiz,
+    username:req.body.username
+  });//end create newQuiz
+  console.log("new quiz:", newQuiz);
   res.sendStatus(200);
 });//end of post create
 //Serve index/etc. ****put at bottom****
