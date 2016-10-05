@@ -9,7 +9,16 @@ var mongoose = require('mongoose');
 
 //set mongoose connection
  var mongoURI = 'mongodb://localhost:27017/soloproject';
- var mongoDB = mongoose.connect(mongoURI).connection;
+ var MongoDB = mongoose.connect(mongoURI).connection;
+ // mongo db connection error handeling
+MongoDB.on('error', function (err) {
+    console.log('mongodb connection error:', err);
+});
+
+MongoDB.once('open', function () {
+  console.log('mongodb connection open!');
+});// end mongo error handeling
+
 //set port decision
 app.set("port", (process.env.PORT || 3030));
 app.use(urlEncodedParser);
