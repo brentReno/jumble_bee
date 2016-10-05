@@ -37,8 +37,19 @@ app.post("/create", function(req,res){
     username:req.body.username
   });//end create newQuiz
   console.log("new quiz:", newQuiz);
-  res.sendStatus(200);
+  //save to DB
+  newQuiz.save(function(err){
+    if(err){
+      console.log("an error has occured:", err);
+      res.sendStatus(500);
+    }
+    else{
+      console.log("newQuiz saved!");
+      res.sendStatus(200);
+    }//end if else
+  }); //end save
 });//end of post create
+
 //Serve index/etc. ****put at bottom****
 app.get("/*", function(req, res){
   console.log("Here is the property:", req.params[0]);
