@@ -2,7 +2,8 @@ var numWords;
 var quizName;
 var range =[];
 var quiz =[];
-myApp.controller("createTestController", ["$scope","$http", function($scope, $http){
+var addingWords;
+myApp.controller("createTestController", ["$scope","$http", "quizService", function($scope, $http, quizService){
   console.log("This is Create");
   // enter basic quiz data, show inputs for words
   $scope.showInputs = function(){
@@ -42,7 +43,11 @@ myApp.controller("createTestController", ["$scope","$http", function($scope, $ht
       url:"/create",
       data: objectToSend
     }).then(function(data){
-      console.log("back from server", data);
+      console.log("back from server", data.data.words);
+      var quizWords = data.data.words;
+      console.log("quizWords:", quizWords);
+      addingWords = quizService.addWords(quizWords);
+      console.log("these are going to the service:", addingWords);
     });//end call
 
   };//end createQuiz

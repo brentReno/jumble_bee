@@ -29,6 +29,7 @@ app.listen(app.get("port"), function(){
   console.log("I'm listening at:", app.get("port"));
 });//end spin up server
 
+//create new quiz
 app.post("/create", function(req,res){
   console.log("hit the post route with:", req.body);
   var newQuiz = new Quiz({
@@ -38,14 +39,15 @@ app.post("/create", function(req,res){
   });//end create newQuiz
   console.log("new quiz:", newQuiz);
   //save to DB
-  newQuiz.save(function(err){
+  newQuiz.save(function(err, Quiz){
     if(err){
       console.log("an error has occured:", err);
       res.sendStatus(500);
     }
     else{
       console.log("newQuiz saved!");
-      res.sendStatus(200);
+      console.log(Quiz);
+      res.send(Quiz);
     }//end if else
   }); //end save
 });//end of post create
