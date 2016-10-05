@@ -22,6 +22,8 @@ myApp.controller("createTestController", ["$scope","$http", function($scope, $ht
 
   //collect words from inputs
   $scope.createQuiz= function(){
+    //get user data
+    $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
     console.log("in create quiz");
     for (var i = 0; i < numWords; i++) {
       //get input data
@@ -32,7 +34,7 @@ myApp.controller("createTestController", ["$scope","$http", function($scope, $ht
       console.log(quiz);
     }//end for
       //package in object
-    var objectToSend ={ quiz_name:quizName, quiz:quiz};
+    var objectToSend ={ quiz_name:quizName, quiz:quiz, username: $scope.user.username};
     console.log(objectToSend);
     //send to server
     $http({

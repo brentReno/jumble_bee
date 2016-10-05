@@ -4,7 +4,12 @@ var app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
 var urlEncodedParser = bodyParser.urlencoded({extended:false});
+var Quiz = require("./models/quiz");
+var mongoose = require('mongoose');
 
+//set mongoose connection
+ var mongoURI = 'mongodb://localhost:27017/soloproject';
+ var mongoDB = mongoose.connect(mongoURI).connection;
 //set port decision
 app.set("port", (process.env.PORT || 3030));
 app.use(urlEncodedParser);
