@@ -1,7 +1,8 @@
 var numWords;
 var quizName;
 var range =[];
-myApp.controller("createTestController", ["$scope", function($scope){
+var quiz =[];
+myApp.controller("createTestController", ["$scope","$http" function($scope, $http){
   console.log("This is Create");
   // enter basic quiz data, show inputs for words
   $scope.showInputs = function(){
@@ -23,9 +24,24 @@ myApp.controller("createTestController", ["$scope", function($scope){
   $scope.createQuiz= function(){
     console.log("in create quiz");
     for (var i = 0; i < numWords; i++) {
+      //get input data
       var word= document.getElementById(i+1).value;
       console.log(word);
-    }
+      //put into an array
+      quiz.push(word);
+      console.log(quiz);
+    }//end for
+      //package in object
+    var objectToSend ={ quiz_name:quizName, quiz:quiz};
+    console.log(objectToSend);
+    //send to server
+    $http({
+      method:"POST",
+      url:"/create",
+      data: objectToSend
+    }).then(function(data){
+      console.log("back from server", data);
+    });//end call
 
   };//end createQuiz
 }]);
