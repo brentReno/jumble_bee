@@ -12,14 +12,12 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
     for (var i = 0; i < quiz.length; i++) {
       // get single word returned in an array
       var wordToJumble= quiz.slice(i,i+1);
-      console.log(wordToJumble);
       var arrayOfLetters= wordToJumble[0].split("");
-      console.log(arrayOfLetters);
       //shuffle the letters
       shuffle(arrayOfLetters);
-      console.log(arrayOfLetters);
+      //join letters in a word
       var jumbledWord = arrayOfLetters.join("");
-      console.log(jumbledWord);
+      //push words to an array
       jumbledWords.push(jumbledWord);
     }
   };//end jumble
