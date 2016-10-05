@@ -1,7 +1,7 @@
 var jumbledWords=[];
 myApp.controller("playGameController", ["$scope", "quizService", function($scope, quizService){
   console.log("This is Play ");
-  $scope.quizWords = [ 'test', 'game', 'dsad'];
+  $scope.quizWords = quizService.getQuiz();
   console.log($scope.quizWords);
   jumble($scope.quizWords);
   $scope.jumbledWords=jumbledWords;
