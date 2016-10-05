@@ -2,7 +2,7 @@ var numWords;
 var quizName;
 var range =[];
 var quiz =[];
-myApp.controller("createTestController", ["$scope","$http" function($scope, $http){
+myApp.controller("createTestController", ["$scope","$http", function($scope, $http){
   console.log("This is Create");
   // enter basic quiz data, show inputs for words
   $scope.showInputs = function(){
