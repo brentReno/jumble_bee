@@ -3,7 +3,7 @@ var quizName;
 var range =[];
 var quiz =[];
 var addingWords;
-myApp.controller("createTestController", ["$scope","$http", "quizService", function($scope, $http, quizService){
+myApp.controller("createTestController", ["$scope","$http", "quizService", "$location",function($scope, $http, quizService, $location){
   console.log("This is Create");
   // enter basic quiz data, show inputs for words
   $scope.showInputs = function(){
@@ -48,6 +48,7 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", funct
       console.log("quizWords:", quizWords);
       addingWords = quizService.addWords(quizWords);
       console.log("these are going to the service:", addingWords);
+      $location.url('/playGame');
     });//end call
 
   };//end createQuiz
