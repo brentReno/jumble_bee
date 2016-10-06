@@ -33,8 +33,17 @@ app.listen(app.get("port"), function(){
 app.get("/saved/:username", function(req,res){
   console.log("hit the saved route");
   console.log("params:", req.params.username);
-  res.sendStatus(200);
-});
+  //find the users quizzes
+  Quiz.find({username: req.params.username}, function(err, quizResults){
+    if(err){
+      console.log("An error occured:", err);
+      res.sendStatus(500);
+    }
+    else{
+      res.send(quizResults);
+    }//end if else
+  });// end find
+});//end get saved
 
 //create new quiz
 app.post("/create", function(req,res){
