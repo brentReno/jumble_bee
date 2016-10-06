@@ -1,4 +1,5 @@
 <p>Which quiz would you like to practice?</p>
-<select class="" name="userQuizzes">
+<select class="" name="userQuizzes" ng-model="selectedQuiz" ng-options= "quiz.name for quiz in savedQuizzes">
+  <option value=""> Select A Quiz</option>
 
 </select>

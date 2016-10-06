@@ -10,6 +10,7 @@ myApp.controller("loadTestController", ["$scope", '$http', '$location',  functio
       url:"/saved/"+$scope.user.username
     }).then(function(data){
       console.log("back from server with:", data);
+      $scope.savedQuizzes = data.data;
     });
 
   };//end init
