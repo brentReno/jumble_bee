@@ -14,10 +14,16 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
   //check answers function
   $scope.checkAnswer = function(index){
     var id = "question-"+index;
+    var responseId= "response-"+index;
     console.log(id);
-    var answer =document.getElementById(id).value;
-    console.log(answer);
-
+    var userAnswer =document.getElementById(id).value;
+    console.log(userAnswer);
+    if (userAnswer !== $scope.correctAnswers[index]){
+      document.getElementById(responseId).innerHTML = "So close, try again!";
+    }
+     else if(userAnswer == $scope.correctAnswers[index]){
+      document.getElementById(responseId).innerHTML = "Way to go!!!! You got that right!";
+    }
   };
 
 }]);

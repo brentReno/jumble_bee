@@ -1,5 +1,6 @@
 <div ng-repeat=" word in jumbledWords">
   <p>{{word}}</p>
   <input type="text" name="name" value="" id="question-{{$index}}">
+  <p id="response-{{$index}}"></p>
   <button type="button" name="button"  ng-click="checkAnswer($index)"> Check Answer</button>
 </div>
