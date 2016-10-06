@@ -1,4 +1,5 @@
-myApp.controller("loadTestController", ["$scope", '$http', '$location',  function($scope, $http, $location){
+var loadedQuiz;
+myApp.controller("loadTestController", ["$scope", '$http', '$location', "quizService",  function($scope, $http, $location, quizService){
   console.log("Load Test");
   //init function to load users tests.
   $scope.init = function(){
@@ -18,8 +19,10 @@ myApp.controller("loadTestController", ["$scope", '$http', '$location',  functio
 
   $scope.changedValue = function(item){
     console.log(item);
+    loadedQuiz = quizService.addWords(item.words);
+    console.log("going to the service", loadedQuiz);
+    $location.url('/playGame');
   };
-
 
 
   //call on Load
