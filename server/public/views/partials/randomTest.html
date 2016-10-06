@@ -1,3 +1,7 @@
-<label>Enter a Noun</label>
-<input type="text" name="name" value=""placeholder="ex: basketball" ng-model="subject"><br>
-<button type="button" name="button" ng-click="randomQuiz()">Make a Random Quiz</button>
+<select class="" name="" ng-model="limiter">
+  <option>Noun</option>
+  <option>Adjective</option>
+</select>
+<label for="">Insert a {{limiter}}</label>
+<input type="text" name="name" value="" ng-model="testSubject"></input>
+<button type="button" name="button" ng-click="randomQuiz()">Get Random Quiz</button>
