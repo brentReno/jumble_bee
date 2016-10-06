@@ -1,5 +1,6 @@
 var dataMuseReq;
-myApp.controller("randomTestController", ["$scope","$http", function($scope,$http){
+var randomTest=[];
+myApp.controller("randomTestController", ["$scope","$http", "$location", "quizService", function($scope,$http, $location, quizService){
   console.log("This is Random");
   //populate selects
 
@@ -17,6 +18,14 @@ myApp.controller("randomTestController", ["$scope","$http", function($scope,$htt
 
     }).then(function(data){
       console.log(data);
+      for (var i = 0; i < data.data.length; i++) {
+        var word = data.data[ i ].word;
+        console.log(word);
+        randomTest.push(word);
+      }
+      randomTest = quizService.addWords(randomTest);
+      console.log("these are going to the service:", randomTest);
+      $location.url('/playGame');
     });
 }
 else if($scope.limiter =="Adjective"){
@@ -26,10 +35,18 @@ else if($scope.limiter =="Adjective"){
       url:"https://api.datamuse.com/" + dataMuseReq
 
     }).then(function(data){
-      console.log(data);
+        console.log(data);
+        for (var i = 0; i < data.data.length; i++) {
+          var word = data.data[ i ].word;
+          console.log(word);
+          randomTest.push(word);
+        }
+        randomTest = quizService.addWords(randomTest);
+        console.log("these are going to the service:", randomTest);
+        $location.url('/playGame');
+
     });
 }
-
   };//end random quiz click
 
 }]);
