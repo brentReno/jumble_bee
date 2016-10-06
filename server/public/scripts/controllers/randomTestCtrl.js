@@ -7,9 +7,10 @@ myApp.controller("randomTestController", ["$scope","$http", function($scope,$htt
   $scope.randomQuiz = function(){
     //collect info
     var subject = $scope.testSubject;
+    var maxNum=$scope.number;
     console.log(subject);
     if($scope.limiter == "Noun"){
-     dataMuseReq = 'words?rel_jjb='+subject;
+     dataMuseReq = 'words?rel_jjb='+subject+"&max="+ maxNum;
     $http({
       method:"GET",
       url:"https://api.datamuse.com/" + dataMuseReq
@@ -19,7 +20,7 @@ myApp.controller("randomTestController", ["$scope","$http", function($scope,$htt
     });
 }
 else if($scope.limiter =="Adjective"){
-     dataMuseReq = 'words?rel_jja='+subject;
+     dataMuseReq = 'words?rel_jja='+subject +"&max="+maxNum;
     $http({
       method:"GET",
       url:"https://api.datamuse.com/" + dataMuseReq
