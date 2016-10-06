@@ -29,6 +29,13 @@ app.listen(app.get("port"), function(){
   console.log("I'm listening at:", app.get("port"));
 });//end spin up server
 
+//get saved quizzes for user
+app.get("/saved/:username", function(req,res){
+  console.log("hit the saved route");
+  console.log("params:", req.params.username);
+  res.sendStatus(200);
+});
+
 //create new quiz
 app.post("/create", function(req,res){
   console.log("hit the post route with:", req.body);
