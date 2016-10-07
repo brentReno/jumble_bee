@@ -1,3 +1,4 @@
+//globals
 var numWords;
 var quizName;
 var range =[];
@@ -43,11 +44,11 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
       url:"/create",
       data: objectToSend
     }).then(function(data){
-      console.log("back from server", data.data.words);
+      //place quiz words in an array
       var quizWords = data.data.words;
-      console.log("quizWords:", quizWords);
+      //send words to the service for access on play page
       addingWords = quizService.addWords(quizWords);
-      console.log("these are going to the service:", addingWords);
+      //swithc view to play
       $location.url('/playGame');
     });//end call
 
