@@ -1,13 +1,6 @@
-<select class="" name="" ng-model="limiter">
-  <option>Noun</option>
-  <option>Adjective</option>
-</select>
-<label for="">{{limiter}} goes here -></label>
-<input type="text" name="name" value="" ng-model="testSubject"></input>
-<select ng-model="number">
-  <option>5</option>
-  <option>10</option>
-  <option>15</option>
-  <option>20</option>
-</select>  
+<p>Enter up to two words for the subject of the quiz. Example: Winter and Sports</p>
+<label>Word One</label>
+<input type="text" name="name" value="" ng-model="subjectOne"></input>
+<label>Word Two</label>
+<input type="text" name="name" value="" ng-model="subjectTwo"></input>
 <button type="button" name="button" ng-click="randomQuiz()">Get Random Quiz</button>

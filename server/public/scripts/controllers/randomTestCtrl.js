@@ -7,31 +7,28 @@ myApp.controller("randomTestController", ["$scope","$http", "$location", "quizSe
   //random quiz click
   $scope.randomQuiz = function(){
     //collect info
-    var subject = $scope.testSubject;
-    dataMuseReq = 'words?rel_jjb='+subject;
-    console.log(subject);
-    if($scope.limiter == "Noun"){
-
-      $http({
-        method:"GET",
-        url:"https://api.datamuse.com/" + dataMuseReq
-
-      }).then(function(data){
-        console.log(data);
-        for (var i = 0; i < data.data.length; i++) {
-          var word = data.data[ i ].word;
-          console.log(word);
-          randomTest.push(word);
-        }
-        randomTest = quizService.addWords(randomTest);
-        console.log("these are going to the service:", randomTest);
-        $location.url('/playGame');
-      });
+    //used in save function as test name
+    var testName;
+    //used in creating dataMuseReq string
+    var subjectOne;
+    var subjecTwo;
+    //if second input field is empty
+    if($scope.subjectTwo === undefined){
+      subjectOne = $scope.subjectOne;
+      testName = subjectOne;
+      dataMuseReq = 'words?topics='+subjectOne;
     }
-    else if($scope.limiter =="Adjective"){
+    //if both inout fields have data
+    else{
+
+      subjectOne = $scope.subjectOne;
+      subjectTwo = $scope.subjectTwo;
+      testName = subjectOne + " " + subjectTwo;
+      dataMuseReq = 'words?topics='+subjectOne + "," + subjectTwo;
+    }
       $http({
         method:"GET",
-        url:"https://api.datamuse.com/" + dataMuseReq
+        url:"https://api.datamuse.com/" + dataMuseReq +"$max=30"
 
       }).then(function(data){
           console.log(data);
@@ -40,13 +37,15 @@ myApp.controller("randomTestController", ["$scope","$http", "$location", "quizSe
             console.log(word);
             randomTest.push(word);
           }
-          saveRandom(subject, randomTest, $scope.user);
+          saveRandom(testName, randomTest, $scope.user);
+          randomTest=[];
+          console.log(randomTest);
 
       });
-    }
   };//end random quiz click
-  var saveRandom = function(subject, test, user ){
-    var quizName= "Random " + subject + " quiz";
+
+  var saveRandom = function(testName, test, user ){
+    var quizName= "Random " + testName + " quiz";
     var objectToSend ={ quiz_name:quizName, quiz:test, username: user.username};
     console.log(objectToSend);
     $http({
