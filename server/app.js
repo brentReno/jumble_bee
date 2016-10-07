@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 var retext = require('retext');
 var inspect = require('unist-util-inspect');
 var syllable = require('retext-syllable');
+var syllableCount = require('./modules/syllableCount');
 
 //set mongoose connection
  var mongoURI = 'mongodb://localhost:27017/soloproject';
@@ -73,22 +74,18 @@ app.post("/create", function(req,res){
 
 //create new quiz based off random
 app.post("/createRandom", function(req,res){
-  console.log("hit the post route with:", req.body);
-  var newRandomQuiz = new Quiz({
-    name:req.body.quiz_name,
-    words:req.body.quiz,
-    username:req.body.username
-  });//end create newQuiz
-  console.log("new quiz:", newRandomQuiz);
-  retext().use(syllable).use(function () {
-    return function (cst) {
-        console.log(inspect(cst));
-        var testData = cst;
-        console.log(testData);
-        console.log("syllable count is:", testData.children[0].data.syllableCount);
-    };
-}).process('candycane');
+for (var i = 0; i < req.body.quiz.length; i++) {
+  var word = req.body.quiz[i];
+  console.log(word);
+  console.log(syllableCount(word));
+}
 
+  // var newRandomQuiz = new Quiz({
+  //   name:req.body.quiz_name,
+  //   words:req.body.quiz,
+  //   username:req.body.username
+  // });//end create newQuiz
+  // console.log("new quiz:", newRandomQuiz);
   res.sendStatus(200);
 }); //end post create random
 
