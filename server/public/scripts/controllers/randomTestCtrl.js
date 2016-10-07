@@ -28,7 +28,7 @@ myApp.controller("randomTestController", ["$scope","$http", "$location", "quizSe
     }
       $http({
         method:"GET",
-        url:"https://api.datamuse.com/" + dataMuseReq +"$max=30"
+        url:"https://api.datamuse.com/" + dataMuseReq +"&max=30"
 
       }).then(function(data){
           console.log(data);

@@ -1,0 +1,15 @@
+Scope of work approval 10/6/16 -DONE
+Creation of program shell and server – 10/7/16 -DONE
+Routes both client side and server side – 10/8/16 _DONE
+Front end views- 10/9/16 -In Progress
+Access to creating new test/load saved tests 10/12/16 - In Progress
+Styling and UI 10/14/16
+ MVP /foreseeable bugs eliminated 10/16/16
+
+Stretch Goals
+ ● DELETE route for saved games
+● PUT route to update saved games
+● Provide user with a hint for the word
+● Hot/cold display for incorrect submissions
+● Admin functionality( allow teachers/parents  to add lists/ track results)
+● Results tracking for the user
