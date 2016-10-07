@@ -1,14 +1,21 @@
 myApp.service('quizService',function(){
   //establish words var to contain quiz words
- var words;
-
+  var words = [];
   //function to add quiz to words var
   var addWords = function(quiz){
      words = quiz;
+     console.log("add words words:", words);
      return words;
   };
   //get the words for manipulation
   var getQuiz = function(){
+    console.log("get words words:", words);
+  return words;
+};
+
+var emptyWords=function(){
+  words = [];
+  console.log("empty words:", words);
   return words;
 };
 
@@ -44,6 +51,7 @@ myApp.service('quizService',function(){
     addWords: addWords,
     getQuiz: getQuiz,
     jumble: jumble,
-    shuffle: shuffle
+    shuffle: shuffle,
+    emptyWords: emptyWords
   };
 });

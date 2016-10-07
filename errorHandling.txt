@@ -5,3 +5,4 @@ if nothing is present for $scope.quizWords, error. check empty
 IF a word is two words ie: candy land, the space is not in the right place once jumbled.
 Numbers & special characters can be entered in create
 Repeats in repeat not allowed
+two quizzes load ......
