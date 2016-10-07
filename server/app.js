@@ -75,11 +75,13 @@ app.post("/create", function(req,res){
 //create new quiz based off random
 app.post("/createRandom", function(req,res){
   var quizWords=[];
+  var maxSyllables = 1;
+  var maxChars = 7;
 for (var i = 0; i < req.body.quiz.length; i++) {
   var word = req.body.quiz[i];
   console.log(word);
   console.log(syllableCount(word));
-  if(syllableCount(word)== 1 && word.length < 7){
+  if(syllableCount(word)== maxSyllables && word.length < maxChars){
     quizWords.push(word);
   }
   console.log(quizWords);
