@@ -3,17 +3,15 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
   console.log("This is Play ");
   //empty arrays
   $scope.quizWords = [];
-  console.log($scope.quizWords);
   $scope.correctAnswers=[];
-  console.log($scope.correctAnswers);
   jumbledWords=[];
-  console.log($scope.jumbledWords);
+
   //get quiz words to jumble
   $scope.quizWords = quizService.getQuiz();
   //get quiz words, as answer key
   $scope.correctAnswers = quizService.getQuiz();
-  console.log($scope.quizWords);
-  //empty service array
+
+  //empty quizService array
   quizService.emptyWords();
 
   //jumble the quiz words for display on the Dom
@@ -22,11 +20,14 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
 
   //check answers function
   $scope.checkAnswer = function(index){
+    //get id of the question
     var id = "question-"+index;
+    //get the id of the response
     var responseId= "response-"+index;
-    console.log(id);
+    //get the users answer
     var userAnswer =document.getElementById(id).value;
     console.log(userAnswer);
+    //compare the users answer to the answer key array
     if (userAnswer !== $scope.correctAnswers[index]){
       document.getElementById(responseId).innerHTML = "So close, try again!";
     }
