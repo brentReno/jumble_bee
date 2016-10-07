@@ -74,15 +74,21 @@ app.post("/create", function(req,res){
 
 //create new quiz based off random
 app.post("/createRandom", function(req,res){
+  //globals and maxes
   var quizWords=[];
-  var maxSyllables = 1;
-  var maxChars = 7;
+  const MAX_SYLLABLES = 1;
+  const MAX_CHARS = 7;
+  const MAX_WORDS=10;
+  //this should get the syllable count, and filter out words that have too many syllables or charachters
   for (var i = 0; i < req.body.quiz.length; i++) {
     var word = req.body.quiz[i];
     console.log(word);
     console.log(syllableCount(word));
-    if(syllableCount(word)== maxSyllables && word.length < maxChars){
+    if(syllableCount(word)== MAX_SYLLABLES && word.length < MAX_CHARS){
       quizWords.push(word);
+    }
+    if(quizWords.length>MAX_WORDS){
+      quizWords.splice(MAX_WORDS, quizWords.length-MAX_WORDS);
     }
     console.log(quizWords);
   }
