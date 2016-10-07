@@ -55,11 +55,11 @@ myApp.controller("randomTestController", ["$scope","$http", "$location", "quizSe
       data: objectToSend
     }).then(function(data){
           console.log("back from the server", data);
-          // var quizWords = data.data.words;
-          // console.log("quizWords:", quizWords);
-          // addingWords = quizService.addWords(quizWords);
-          // console.log("these are going to the service:", addingWords);
-          // $location.url('/playGame');
+          var quizWords = data.data.words;
+          console.log("quizWords:", quizWords);
+          addingWords = quizService.addWords(quizWords);
+          console.log("these are going to the service:", addingWords);
+          $location.url('/playGame');
         });
   };
 }]);

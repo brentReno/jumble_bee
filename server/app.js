@@ -77,23 +77,32 @@ app.post("/createRandom", function(req,res){
   var quizWords=[];
   var maxSyllables = 1;
   var maxChars = 7;
-for (var i = 0; i < req.body.quiz.length; i++) {
-  var word = req.body.quiz[i];
-  console.log(word);
-  console.log(syllableCount(word));
-  if(syllableCount(word)== maxSyllables && word.length < maxChars){
-    quizWords.push(word);
+  for (var i = 0; i < req.body.quiz.length; i++) {
+    var word = req.body.quiz[i];
+    console.log(word);
+    console.log(syllableCount(word));
+    if(syllableCount(word)== maxSyllables && word.length < maxChars){
+      quizWords.push(word);
+    }
+    console.log(quizWords);
   }
-  console.log(quizWords);
-}
-
-  // var newRandomQuiz = new Quiz({
-  //   name:req.body.quiz_name,
-  //   words:req.body.quiz,
-  //   username:req.body.username
-  // });//end create newQuiz
-  // console.log("new quiz:", newRandomQuiz);
-  res.sendStatus(200);
+    var newRandomQuiz = new Quiz({
+      name:req.body.quiz_name,
+      words:quizWords,
+      username:req.body.username
+    });//end create newQuiz
+    console.log("new quiz:", newRandomQuiz);
+      newRandomQuiz.save(function(err, Quiz){
+        if(err){
+          console.log("an error has occured:", err);
+          res.sendStatus(500);
+        }
+        else{
+          console.log("newQuiz saved!");
+          console.log(Quiz);
+          res.send(Quiz);
+        }//end if else
+      }); //end save
 }); //end post create random
 
 //Serve index/etc. ****put at bottom****
