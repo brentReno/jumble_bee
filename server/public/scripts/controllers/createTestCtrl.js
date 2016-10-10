@@ -34,10 +34,20 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
       //get input data
       var word= document.getElementById(i+1).value;
       console.log(word);
+      //check for empty
+      if(word===""){
+        document.getElementById(i+1).setAttribute('placeholder', "Please enter a word.");
+      }
+      else{
       //put into an array
       quiz.push(word);
       console.log(quiz);
+      }
     }//end for
+    if(quiz.length<numWords){
+        alert("Please enter a word in all spaces");
+        return;
+    }
       //package in object
     var objectToSend ={ quiz_name:quizName, quiz:quiz, username: $scope.user.username};
     console.log(objectToSend);

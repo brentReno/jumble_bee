@@ -11,7 +11,7 @@
 </div>
 <div class ="row" id="inputs" ng-hide="showInputs">
   <div data-ng-repeat="i in range">
-    <input type="text" name="name" value="" id={{i+1}}>
+    <input type="text" name="name" value="" id={{i+1}} placeholder="Enter word here">
 </div>
 <button ng-hide="showOnError" ng-repeat-end ng-click="createQuiz()"> Create Quiz </button>
 <div ng-show="showOnError" id="errorsDispaly">
