@@ -54,7 +54,7 @@ app.get("/saved/:username", function(req,res){
 app.post("/create", function(req,res){
   console.log("hit the post route with:", req.body);
    var checkedResults= spellCheck(req.body.quiz);
-   console.log(checkedResults);
+   console.log("after spellCheck", checkedResults);
 res.sendStatus(200);
   // var newQuiz = new Quiz({
   //   name:req.body.quiz_name,
