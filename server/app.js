@@ -58,29 +58,29 @@ app.post("/create", function(req,res){
    //check to see if all words are correct, test can be saved, if not return suggestions to client side
    if(checkedResults.spelling === true){
      console.log("All words are correct");
+       var newQuiz = new Quiz({
+         name:req.body.quiz_name,
+         words:checkedResults.quiz,
+         username:req.body.username
+       });//end create newQuiz
+       console.log("new quiz:", newQuiz);
+       //save to DB
+       newQuiz.save(function(err, Quiz){
+         if(err){
+           console.log("an error has occured:", err);
+           res.sendStatus(500);
+         }
+         else{
+           console.log("newQuiz saved!");
+           console.log(Quiz);
+           res.send(Quiz);
+         }//end if else
+       }); //end save
    }
    else if(checkedResults.spelling === false){
      console.log("some words are incorrect");
+     res.sendStatus(200);
    }
-res.sendStatus(200);
-  // var newQuiz = new Quiz({
-  //   name:req.body.quiz_name,
-  //   words:req.body.quiz,
-  //   username:req.body.username
-  // });//end create newQuiz
-  // console.log("new quiz:", newQuiz);
-  // //save to DB
-  // newQuiz.save(function(err, Quiz){
-  //   if(err){
-  //     console.log("an error has occured:", err);
-  //     res.sendStatus(500);
-  //   }
-  //   else{
-  //     console.log("newQuiz saved!");
-  //     console.log(Quiz);
-  //     res.send(Quiz);
-  //   }//end if else
-  // }); //end save
 });//end of post create
 
 //create new quiz based off random
