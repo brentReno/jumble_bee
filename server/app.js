@@ -79,7 +79,7 @@ app.post("/create", function(req,res){
    }
    else if(checkedResults.spelling === false){
      console.log("some words are incorrect");
-     res.sendStatus(200);
+     res.send(checkedResults);
    }
 });//end of post create
 

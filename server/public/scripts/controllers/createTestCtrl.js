@@ -44,12 +44,18 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
       url:"/create",
       data: objectToSend
     }).then(function(data){
+      console.log("back from server with:",data);
+      if(data.data.spelling === false){
+        console.log("Some words are spelled incorrectly, please fix them.");
+      }
+      else{
       //place quiz words in an array
       var quizWords = data.data.words;
-      //send words to the service for access on play page
+      // //send words to the service for access on play page
       addingWords = quizService.addWords(quizWords);
-      //swithc view to play
+      // //switch view to play
       $location.url('/playGame');
+    }
     });//end call
 
   };//end createQuiz
