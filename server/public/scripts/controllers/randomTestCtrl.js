@@ -37,10 +37,16 @@ myApp.controller("randomTestController", ["$scope","$http", "$location", "quizSe
             console.log(word);
             randomTest.push(word);
           }
+            if($scope.user === null){
+              addingWords = quizService.addWords(randomTest);
+              console.log("these are going to the service:", addingWords);
+              $location.url('/playGame');
+            }
+            else if($scope.user !== undefined) {
           saveRandom(testName, randomTest, $scope.user);
           randomTest=[];
           console.log(randomTest);
-
+        }
       });
   };//end random quiz click
 
