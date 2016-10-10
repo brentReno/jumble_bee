@@ -4,8 +4,10 @@ var quizName;
 var range =[];
 var quiz =[];
 var addingWords;
+var updatedWord;
 myApp.controller("createTestController", ["$scope","$http", "quizService", "$location",function($scope, $http, quizService, $location){
   console.log("This is Create");
+  //hide error display
   $scope.showOnError =false;
   // enter basic quiz data, show inputs for words
   $scope.showInputs = function(){
@@ -47,6 +49,7 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
     }).then(function(data){
       console.log("back from server with:",data);
       if(data.data.spelling === false){
+        //show error display
         $scope.showOnError= true;
         $scope.wrongWords= data.data.results;
       }
@@ -59,6 +62,36 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
       $location.url('/playGame');
     }
     });//end call
+  };//end create quiz
 
-  };//end createQuiz
+  $scope.tryAgain= function(){
+    quiz=[];
+    for (var i = 0; i < numWords; i++) {
+      updatedWord=document.getElementById(i+1).value;
+      quiz.push(updatedWord);
+    }
+    console.log(quiz);
+    objectToSend ={ quiz_name:quizName, quiz:quiz, username: $scope.user.username};
+    console.log(objectToSend);
+    $http({
+      method:"POST",
+      url:"/create",
+      data: objectToSend
+    }).then(function(data){
+      console.log("back from server with:",data);
+      if(data.data.spelling === false){
+        //show error display
+        $scope.showOnError= true;
+        $scope.wrongWords= data.data.results;
+      }
+      else{
+      //place quiz words in an array
+      var quizWords = data.data.words;
+      // //send words to the service for access on play page
+      addingWords = quizService.addWords(quizWords);
+      // //switch view to play
+      $location.url('/playGame');
+      }
+    });//end then
+  };
 }]);
