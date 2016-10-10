@@ -116,4 +116,8 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
       }
     });//end then
   };
+
+  $scope.logIn= function(){
+    quizService.logIn();
+  };
 }]);

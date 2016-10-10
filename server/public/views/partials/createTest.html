@@ -3,9 +3,9 @@
     <h4 class="col-xs-4 col-xs-offset-5"> Make a New Quiz!</h4>
   </div>
   <div ng-hide="showCreate">
-    <p> Pleas log in to use this feature</p>
+    <p > Please <a ng-click="logIn()">log in</a> to use this feature</p>
   </div>
-  
+
   <div ng-show="showCreate" class ="row" id="nameNum" ng-show="showInputs">
     <label for="quantity" class="col-xs-3 col-xs-offset-2" >How many words?</label>
     <input type="number" min="5" max="20" id="quantity" class="col-xs-1" ng-model="numWordsIn">
