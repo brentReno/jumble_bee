@@ -7,6 +7,19 @@ var addingWords;
 var updatedWord;
 myApp.controller("createTestController", ["$scope","$http", "quizService", "$location",function($scope, $http, quizService, $location){
   console.log("This is Create");
+  //check for log in
+  //get user data
+  $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
+    if($scope.user === null){
+      console.log("must log In");
+      // show please log in
+      $scope.showCreate = false;
+    }
+    //if logged in
+    else if($scope.user !== undefined){
+      //show dropdown to load tests
+      $scope.showCreate= true;
+    }//end check for log in
   //hide error display
   $scope.showOnError =false;
   // enter basic quiz data, show inputs for words
@@ -27,8 +40,7 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
 
   //collect words from inputs
   $scope.createQuiz= function(){
-    //get user data
-    $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
+
     console.log("in create quiz");
     for (var i = 0; i < numWords; i++) {
       //get input data
