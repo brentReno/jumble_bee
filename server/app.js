@@ -10,6 +10,7 @@ var retext = require('retext');
 var inspect = require('unist-util-inspect');
 var syllable = require('retext-syllable');
 var syllableCount = require('./modules/syllableCount');
+var spellCheck = require('./modules/spellCheck');
 
 //set mongoose connection
  var mongoURI = 'mongodb://localhost:27017/soloproject';
@@ -52,24 +53,27 @@ app.get("/saved/:username", function(req,res){
 //create new quiz
 app.post("/create", function(req,res){
   console.log("hit the post route with:", req.body);
-  var newQuiz = new Quiz({
-    name:req.body.quiz_name,
-    words:req.body.quiz,
-    username:req.body.username
-  });//end create newQuiz
-  console.log("new quiz:", newQuiz);
-  //save to DB
-  newQuiz.save(function(err, Quiz){
-    if(err){
-      console.log("an error has occured:", err);
-      res.sendStatus(500);
-    }
-    else{
-      console.log("newQuiz saved!");
-      console.log(Quiz);
-      res.send(Quiz);
-    }//end if else
-  }); //end save
+   var checkedResults= spellCheck(req.body.quiz);
+   console.log(checkedResults);
+res.sendStatus(200);
+  // var newQuiz = new Quiz({
+  //   name:req.body.quiz_name,
+  //   words:req.body.quiz,
+  //   username:req.body.username
+  // });//end create newQuiz
+  // console.log("new quiz:", newQuiz);
+  // //save to DB
+  // newQuiz.save(function(err, Quiz){
+  //   if(err){
+  //     console.log("an error has occured:", err);
+  //     res.sendStatus(500);
+  //   }
+  //   else{
+  //     console.log("newQuiz saved!");
+  //     console.log(Quiz);
+  //     res.send(Quiz);
+  //   }//end if else
+  // }); //end save
 });//end of post create
 
 //create new quiz based off random
