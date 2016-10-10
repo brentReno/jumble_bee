@@ -1,8 +1,6 @@
-Bugs/Errors to handle: updated 5pm oct 6.
+Bugs/Errors to handle: updated 10am 10-10.
 
-If on play leave play and come back it will add the list of words again
+
 if nothing is present for $scope.quizWords, error. check empty
-IF a word is two words ie: candy land, the space is not in the right place once jumbled.
+
 Numbers & special characters can be entered in create
-Repeats in repeat not allowed
-two quizzes load ......
