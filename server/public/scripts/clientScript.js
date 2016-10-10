@@ -4,7 +4,7 @@ console.log("Hello from the Client Script!");
 //create angular app
 var myApp = angular.module("myApp", ["ngRoute"]);
 
-//config NG routes ****Names will be changed when pages decided upon********
+//config NG routes 
 myApp.config(["$routeProvider", function($routeProvider){
   $routeProvider.
   //home

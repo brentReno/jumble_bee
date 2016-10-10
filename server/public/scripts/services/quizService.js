@@ -47,11 +47,31 @@ var emptyWords=function(){
     }
     return array;
   };//end shuffle
+
+  //login function
+  var logIn = function(){
+    console.log("inside login");
+    lock.show(function(err,profile,token){
+      if(err){
+        console.error("Log In error:", err);
+      }//end error
+      else{
+        //save token
+        localStorage.setItem('userToken', token);
+        // save profile
+        localStorage.setItem('userProfile', JSON.stringify(profile));
+        //reload for protection
+        location.reload();
+      }//end else
+    });//end show
+  };//end login function
+
   return{
     addWords: addWords,
     getQuiz: getQuiz,
     jumble: jumble,
     shuffle: shuffle,
-    emptyWords: emptyWords
+    emptyWords: emptyWords,
+    logIn: logIn
   };
 });

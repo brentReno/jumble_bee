@@ -1,7 +1,7 @@
 var lock = new Auth0Lock("1tISyzkUZ5s8RhcqQjaB5Hzu2ULaY89f","bren0.auth0.com");
 var logOutURL ="https://bren0.auth0.com/v2/logout";
 
-myApp.controller("homeController", ["$scope", '$http', function($scope, $http){
+myApp.controller("homeController", ["$scope", '$http', 'quizService', function($scope, $http, quizService){
   console.log("This is the Home Page");
   //init function
   $scope.init = function(){
@@ -20,37 +20,25 @@ myApp.controller("homeController", ["$scope", '$http', function($scope, $http){
     }
   }; // end init function
 
-//login function
-$scope.logIn = function(){
-  console.log("inside login");
-  lock.show(function(err,profile,token){
-    if(err){
-      console.error("Log In error:", err);
-    }//end error
-    else{
-      //save token
-      localStorage.setItem('userToken', token);
-      // save profile
-      localStorage.setItem('userProfile', JSON.stringify(profile));
-      //reload for protection
-      location.reload();
-    }//end else
-  });//end show
-};//end login function
+//login
+$scope.logIn =function(){
+  quizService.logIn();
+};
 
 //logout function
 $scope.logOut = function(){
-  //call logOut url
-  $http({
-    method:'GET',
-    url: logOutURL,
-  }).then(function(data){
-    if(data.data == 'OK'){
-      emptyLocalStorage();
-      $scope.showUser=false;
-    }//end if
-  });//end http and then
-};//end logout
+    //call logOut url
+    $http({
+      method:'GET',
+      url: logOutURL,
+    }).then(function(data){
+      if(data.data == 'OK'){
+        emptyLocalStorage();
+        $scope.showUser=false;
+      }//end if
+    });//end http and then
+  };//end logout
+
 
 //run on load
 $scope.init();
