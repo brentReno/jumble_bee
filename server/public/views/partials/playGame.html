@@ -1,4 +1,5 @@
-<div ng-repeat=" word in jumbledWords">
+
+<div ng-hide="hidegame"ng-repeat=" word in jumbledWords">
   <p>{{word}}</p>
   <input type="text" name="name" value="" id="question-{{$index}}">
   <p id="response-{{$index}}"></p>
