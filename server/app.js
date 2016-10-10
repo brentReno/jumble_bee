@@ -55,6 +55,13 @@ app.post("/create", function(req,res){
   console.log("hit the post route with:", req.body);
    var checkedResults= spellCheck(req.body.quiz);
    console.log("after spellCheck", checkedResults);
+   //check to see if all words are correct, test can be saved, if not return suggestions to client side
+   if(checkedResults.spelling === true){
+     console.log("All words are correct");
+   }
+   else if(checkedResults.spelling === false){
+     console.log("some words are incorrect");
+   }
 res.sendStatus(200);
   // var newQuiz = new Quiz({
   //   name:req.body.quiz_name,
