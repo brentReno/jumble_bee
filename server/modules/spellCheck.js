@@ -5,6 +5,7 @@ var dictionary = new Typo("en_US");
 var spellCheck = function(quiz){
    var trueQuiz=[];
    var falseResults=[];
+   var trueObject;
   for (var i = 0; i < quiz.length; i++) {
     if(dictionary.check(quiz[i])===false){
       // empty false results array
@@ -14,6 +15,7 @@ var spellCheck = function(quiz){
       var suggestedWords= dictionary.suggest(falseWord);
       //pacake misspelled word, and suggestions together
       var suggestedObject ={
+        spelling: false,
         misspelled: falseWord,
         suggested: suggestedWords,
       };
@@ -25,15 +27,19 @@ var spellCheck = function(quiz){
       console.log("this is true", trueQuiz);
       var trueWord = quiz[i];
       trueQuiz.push(trueWord);
+      trueObject={
+        spelling: true,
+        quiz: trueQuiz
+      };
     }
 
   }//end for
   if(falseResults.length<1){
-    console.log("in if ", trueQuiz, falseResults);
-  return trueQuiz;
+    console.log("in if ", trueObject, falseResults);
+  return trueObject;
 }
 else{
-  console.log("in else", trueQuiz, falseResults);
+  console.log("in else", trueObject, falseResults);
   return falseResults;
 }
 };
