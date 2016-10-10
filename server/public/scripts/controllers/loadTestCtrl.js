@@ -2,15 +2,19 @@ var loadedQuiz;
 myApp.controller("loadTestController", ["$scope", '$http', '$location', "quizService",  function($scope, $http, $location, quizService){
   console.log("Load Test");
   //init function to load users tests.
+  //get username
   $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
-  $scope.init = function(){
 
+  $scope.init = function(){
+    //if not logged in
     if($scope.user === null){
       console.log("must log In");
+      // show please log in
       $scope.showLoad = false;
     }
+    //if logged in
     else if($scope.user !== undefined){
-
+      //show dropdown to load tests
       $scope.showLoad= true;
 
       //get saved tests from Mongo
