@@ -6,6 +6,7 @@ var quiz =[];
 var addingWords;
 myApp.controller("createTestController", ["$scope","$http", "quizService", "$location",function($scope, $http, quizService, $location){
   console.log("This is Create");
+  $scope.showOnError =false;
   // enter basic quiz data, show inputs for words
   $scope.showInputs = function(){
     console.log("in showInputs");
@@ -46,7 +47,8 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
     }).then(function(data){
       console.log("back from server with:",data);
       if(data.data.spelling === false){
-        console.log("Some words are spelled incorrectly, please fix them.");
+        $scope.showOnError= true;
+        $scope.wrongWords= data.data.results;
       }
       else{
       //place quiz words in an array
