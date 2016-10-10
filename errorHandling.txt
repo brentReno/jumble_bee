@@ -1,5 +1,6 @@
 Bugs/Errors to handle: updated 10am 10-10.
 
+createQuiz could be dryer
 
 if nothing is present for $scope.quizWords, error. check empty
 
