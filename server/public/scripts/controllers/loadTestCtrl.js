@@ -36,6 +36,10 @@ myApp.controller("loadTestController", ["$scope", '$http', '$location', "quizSer
     $location.url('/playGame');
   };
 
+  $scope.logIn=function(){
+    quizService.logIn();
+  };
+
 
   //call on Load
   $scope.init();
