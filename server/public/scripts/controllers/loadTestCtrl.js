@@ -2,19 +2,26 @@ var loadedQuiz;
 myApp.controller("loadTestController", ["$scope", '$http', '$location', "quizService",  function($scope, $http, $location, quizService){
   console.log("Load Test");
   //init function to load users tests.
+  $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
   $scope.init = function(){
-    //get user name
-    $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
 
-    //get saved tests from Mongo
-    $http({
-      method:"GET",
-      url:"/saved/"+$scope.user.username
-    }).then(function(data){
-      //place words into an array for display on DOM
-      $scope.savedQuizzes = data.data;
-    });
+    if($scope.user === null){
+      console.log("must log In");
+      $scope.showLoad = false;
+    }
+    else if($scope.user !== undefined){
 
+      $scope.showLoad= true;
+
+      //get saved tests from Mongo
+      $http({
+        method:"GET",
+        url:"/saved/"+$scope.user.username
+      }).then(function(data){
+        //place words into an array for display on DOM
+        $scope.savedQuizzes = data.data;
+      });
+    }//end else
   };//end init
 
   //load test on selection
@@ -28,4 +35,5 @@ myApp.controller("loadTestController", ["$scope", '$http', '$location', "quizSer
 
   //call on Load
   $scope.init();
+
 }]);

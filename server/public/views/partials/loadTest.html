@@ -1,5 +1,12 @@
+<div ng-hide=showLoad>
+  <p> Please, login</p>
+</div>
+
+
+<div ng-show="showLoad"
 <p>Which quiz would you like to practice?</p>
 <select class="" name="userQuizzes" ng-model="selectedQuiz" ng-options= " quiz as quiz.name for quiz in savedQuizzes " ng-change="changedValue(selectedQuiz)">
   <option value="" disabled> Select A Quiz</option>
 
 </select>
+</div>
