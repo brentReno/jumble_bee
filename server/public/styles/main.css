@@ -18,6 +18,14 @@
   font-weight: bolder;
   text-align: center;
 }
+.row .next{
+background-color: #ffd400;
+font-size: 18px;
+color: #444444;
+font-weight: bold;
+text-align: center;
+margin-top: 2%;
+}
 
 .row p{
   font-size: 22px;
@@ -49,7 +57,12 @@
   text-align: center;
   margin-top: 2%;
   margin-bottom: 1%;
-
+}
+.create{
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 3%;
+font-size: 36px;
 }
 .sub{
   text-align: center;
@@ -106,4 +119,8 @@ select{
 }
 .logo{
   margin-top: 5%;
+}
+.inputDiv{
+  text-align: center;
+  font-size: 18px;
 }

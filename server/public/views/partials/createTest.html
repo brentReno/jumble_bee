@@ -1,24 +1,35 @@
 <div class="container">
+  <div class="opacity">
+    <!-- not logged in -->
   <div class="row">
-    <h4 class="col-xs-4 col-xs-offset-5"> Make a New Quiz!</h4>
+    <h3 class="col-md-12 heading create"> Make a New Quiz!</h3>
   </div>
   <div ng-hide="showCreate">
     <p > Please <a ng-click="logIn()">log in</a> to use this feature</p>
   </div>
 
-  <div ng-show="showCreate" class ="row" id="nameNum" ng-show="showInputs">
-    <label for="quantity" class="col-xs-3 col-xs-offset-2" >How many words?</label>
-    <input type="number" min="5" max="20" id="quantity" class="col-xs-1" ng-model="numWordsIn">
-    <label for="name" class="col-xs-3"> Give it a name!</label>
-    <input type="text" name="name" value="" id="name" placeholder="Ex: Birds Quiz" class="col-xs-2" ng-model="nameIn">
-  <button class="col-xs-1 col-xs-offset-6" ng-click="showInputs()">Next</button>
+<!-- Logged in -->
+<div class="row">
+  <div class="inputDiv">
+    <div ng-show="showCreate" class ="row inputs" id="nameNum" ng-show="showInputs">
+      <label for="quantity">How many words?</label>
+      <input type="number" min="5" max="20" id="quantity" ng-model="numWordsIn">
+      <label for="name"> Give it a name!</label>
+      <input type="text" name="name" value="" id="name" placeholder="Ex: Birds Quiz"  ng-model="nameIn">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <button class="col-md-2 col-md-offset-5 btn next"  ng-click="showInputs()">Next</button>
 </div>
 <div class ="row" id="inputs" ng-hide="showInputs">
-  <div data-ng-repeat="i in range">
-    <input type="text" name="name" value="" id={{i+1}} placeholder="Enter word here">
+    <div data-ng-repeat="i in range">
+      <input type="text" name="name" value="" id={{i+1}} placeholder="Enter word here">
+  </div>
+  <button ng-hide="showOnError" ng-repeat-end ng-click="createQuiz()"> Create Quiz </button>
 </div>
-<button ng-hide="showOnError" ng-repeat-end ng-click="createQuiz()"> Create Quiz </button>
 
+<!-- If an error occurs -->
 <div ng-show="showOnError" id="errorsDispaly">
   <div ng-repeat=" word in wrongWords">
   <p> You entered {{word.misspelled}}.</p>
@@ -26,4 +37,6 @@
 </div>
 <p>Please  update any misspelled words, and try again</p>
 <button ng-click="tryAgain()"> Try Again</button>
+</div>
+</div>
 </div>
