@@ -104,6 +104,7 @@ app.post("/createRandom", function(req,res){
     }
     console.log(quizWords);
   }
+  // if there isn't a user logged in
   if(req.body.username == "none"){
     console.log("no user, not being saved");
       var quizToSend={
@@ -112,12 +113,15 @@ app.post("/createRandom", function(req,res){
       res.send(quizToSend);
   }
   else{
+    // if there is a user logged in
+    //make new quiz
     var newRandomQuiz = new Quiz({
       name:req.body.quiz_name,
       words:quizWords,
       username:req.body.username
     });//end create newQuiz
     console.log("new quiz:", newRandomQuiz);
+    //save new quiz to the db
       newRandomQuiz.save(function(err, Quiz){
         if(err){
           console.log("an error has occured:", err);
