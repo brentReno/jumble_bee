@@ -32,17 +32,20 @@
     <div class="row">
       <div class="imageContainer">
         <!-- Load Saved -->
-          <img class="col-md-3" src="../assets/images/bee-hive.png"/>
+          <img class="col-md-3" src="../assets/images/bee-hive.png" ng-click="goLoad()"/>
         <!-- Create New -->
-          <img class="col-md-3 shiftOne" src="../assets/images/honey.png"/>
+          <img class="col-md-3 shiftOne" src="../assets/images/honey.png" ng-click="goCreate()"/>
         <!-- Random -->
-          <img class="col-md-3 shiftTwo" src="../assets/images/honey-jar.png"/>
+          <img class="col-md-3 shiftTwo" src="../assets/images/honey-jar.png" ng-click="goRandom()"/>
         <!-- Log Out -->
-          <img class="col-md-3 shiftThree" src="../assets/images/hexagons.png"/>
+          <img class="col-md-3 shiftThree" src="../assets/images/hexagons.png" ng-click="logOut()"/>
       </div>
     </div>
-        <button ng-click="logOut()">Log Out</button>
-
-
+    <div class="row labels">
+      <p class="col-md-3" >Load a Saved Quiz</p>
+      <p class="col-md-3 adjust" >Create a Quiz</p>
+      <p class="col-md-3" >Take a Random Quiz</p>
+      <p class="col-md-3" >Log Out</p>
+    </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 var lock = new Auth0Lock("1tISyzkUZ5s8RhcqQjaB5Hzu2ULaY89f","bren0.auth0.com");
 var logOutURL ="https://bren0.auth0.com/v2/logout";
 
-myApp.controller("homeController", ["$scope", '$http', 'quizService', function($scope, $http, quizService){
+myApp.controller("homeController", ["$scope", '$http', "$location", 'quizService', function($scope, $http, $location, quizService){
   console.log("This is the Home Page");
   //init function
   $scope.init = function(){
@@ -39,6 +39,19 @@ $scope.logOut = function(){
     });//end http and then
   };//end logout
 
+//load click
+$scope.goLoad =function(){
+  $location.url('/loadTest');
+};
+//random click
+$scope.goRandom=function(){
+  $location.url("randomTest");
+};
+
+//create click
+$scope.goCreate = function(){
+  $location.url("/createTest");
+};
 
 //run on load
 $scope.init();

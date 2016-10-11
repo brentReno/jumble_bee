@@ -4,7 +4,7 @@ console.log("Hello from the Client Script!");
 //create angular app
 var myApp = angular.module("myApp", ["ngRoute"]);
 
-//config NG routes 
+//config NG routes
 myApp.config(["$routeProvider", function($routeProvider){
   $routeProvider.
   //home
@@ -33,6 +33,6 @@ myApp.config(["$routeProvider", function($routeProvider){
     controller: 'playGameController'
   }).
   otherwise({
-    redirectTo:"/viewOne"
+    redirectTo:"/home"
   });
 }]);//end config routes
