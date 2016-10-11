@@ -85,6 +85,7 @@ app.post("/create", function(req,res){
 
 //create new quiz based off random
 app.post("/createRandom", function(req,res){
+  console.log("this is username", req.body.username);
   //globals and maxes
   var quizWords=[];
   const MAX_SYLLABLES = 1;
@@ -103,6 +104,14 @@ app.post("/createRandom", function(req,res){
     }
     console.log(quizWords);
   }
+  if(req.body.username == "none"){
+    console.log("no user, not being saved");
+      var quizToSend={
+        words:quizWords
+      };
+      res.send(quizToSend);
+  }
+  else{
     var newRandomQuiz = new Quiz({
       name:req.body.quiz_name,
       words:quizWords,
@@ -120,6 +129,7 @@ app.post("/createRandom", function(req,res){
           res.send(Quiz);
         }//end if else
       }); //end save
+    }//end else
 }); //end post create random
 
 //Serve index/etc. ****put at bottom****

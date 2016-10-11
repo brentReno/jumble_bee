@@ -38,11 +38,14 @@ myApp.controller("randomTestController", ["$scope","$http", "$location", "quizSe
             randomTest.push(word);
           }
             if($scope.user === null){
-              addingWords = quizService.addWords(randomTest);
-              console.log("these are going to the service:", addingWords);
-              $location.url('/playGame');
+              console.log("in if null");
+              var user ={username: "none"};
+              saveRandom(testName, randomTest, user);
+              randomTest=[];
+              console.log(randomTest);
             }
             else if($scope.user !== undefined) {
+              console.log(" in if not undefined");
           saveRandom(testName, randomTest, $scope.user);
           randomTest=[];
           console.log(randomTest);
@@ -66,5 +69,5 @@ myApp.controller("randomTestController", ["$scope","$http", "$location", "quizSe
           console.log("these are going to the service:", addingWords);
           $location.url('/playGame');
         });
-  };
+  };//end check random
 }]);
