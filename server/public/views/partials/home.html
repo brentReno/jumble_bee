@@ -1,21 +1,24 @@
 <div class="container" ng-hide='showUser'>
+  <div class ="opacity">
   <div class ="row">
-    <div class="col-xs-12" >
-      <h3>Welcome to Jumble!</h3>
+    <div class="col-md-12" >
+      <h3 class="heading">Welcome to Jumble Bee!</h3>
     </div>
   </div>
   <div class ="row">
-    <div class ="col-xs-9">
-      <p> If this is your first time playing Jumble,<b> Sign Up</b> for an account.<br> Otherwise, <b>Log In</b> and pick up where you left off.</p>
+    <div class ="col-md-7">
+      <p class="col-md-offset-1"> If this is your first time here,<b> Sign Up</b> for an account. Otherwise, <b>Log In</b> and pick up where you left off.</p>
       </p>
-      <button type="button" name="login" ng-click="logIn()"> Get Started</button>
+      <button class="btn start  col-md-offset-5" type="button" name="login" ng-click="logIn()"> Get Started</button>
     </div>
-    <div class="col-xs-3">
+    <div class="col-md-5">
       <!-- This is a test image also move styling to stylesheet -->
-      <img style="width:50%;" src="https://www.colourbox.com/preview/4458541-vector-honey-bee.jpg"/>
+      <img style="width:90%;" src="../assets/images/bee_img.png"/>
+    </div>
     </div>
   </div>
 </div>
+
 
 
 <div class="container" ng-show='showUser'>

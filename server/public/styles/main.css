@@ -1,0 +1,38 @@
+.opacity{
+    background-color: rgba(255,255,255,0.9);
+}
+.container{
+  background-image: url("/assets/images/honeycomb.svg");
+  background-clip: content-box;
+
+}
+.heading{
+  font-size: 64px;
+  color: #444444;
+  margin-top: 5%;
+}
+.row .start{
+  background-color: #ffd400;
+  font-size: 18px;
+  color: #444444;
+  font-weight: bolder;
+  text-align: center;
+}
+.row p{
+  font-size: 24px;
+  text-align: left;
+  margin-top:5%;
+  margin-bottom: 2%;
+}
+
+.nav a{
+  color: #1D70A2;
+  font-size: 16px;
+}
+
+.navbar .nav-pills li a:hover{
+  background-color: #FFD400;
+  color: #444444;
+  margin-left: 35%;
+  margin-right: 35%;
+}

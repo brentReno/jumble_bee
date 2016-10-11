@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Prime Solo Project</title>
+    <link rel="stylesheet" href="/styles/main.css" media="screen" title="no title">
     <link rel="stylesheet" href="/vendors/bootstrap.min.css" media="screen" title="no title">
     <script src="https://cdn.auth0.com/js/lock-8.1.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -18,12 +19,12 @@
 
   </head>
   <body ng-app="myApp">
-    <nav class="navbar-dark" style="background-color: #cccccc;">
+    <nav class="navbar" style="background-color: #BFC0C0;">
       <ul class="nav nav-pills nav-justified ">
-        <li><a href="#home"> Home</a></li>
-        <li><a href="#loadTest">Load</a></li>
-        <li><a href="#createTest">Create</a></li>
-        <li><a href="#randomTest"> Random</a></li>
+        <li class="nav-item"><a href="#home"> Home</a></li>
+        <li class="nav-item"><a href="#loadTest">Load</a></li>
+        <li class="nav-item"><a href="#createTest">Create</a></li>
+        <li class="nav-item"><a href="#randomTest"> Random</a></li>
       </ul>
     </nav>
     <main ng-view></main>
