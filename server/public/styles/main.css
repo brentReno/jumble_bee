@@ -9,19 +9,19 @@
 .heading{
   font-size: 64px;
   color: #444444;
-  margin-top: 5%;
+  margin-top: 7%;
 }
 .row .start{
   background-color: #ffd400;
-  font-size: 18px;
+  font-size: 24px;
   color: #444444;
   font-weight: bolder;
   text-align: center;
 }
 .row p{
-  font-size: 24px;
+  font-size: 22px;
   text-align: left;
-  margin-top:5%;
+  margin-top:7%;
   margin-bottom: 2%;
 }
 
