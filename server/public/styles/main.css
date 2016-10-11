@@ -37,6 +37,14 @@
   margin-left: 35%;
   margin-right: 35%;
 }
+
+.navbar .nav-pills li a:focus{
+  background-color: #FFD400;
+  color: #444444;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
 .username{
   text-align: center;
   margin-top: 2%;
@@ -78,4 +86,24 @@
 }
 .adjust{
   margin-left: -1%;
+}
+.center{
+  text-align: center;
+  margin-top: 10%;
+}
+select{
+  margin: 50px;
+  border: 2px solid #FFD400;
+ width: 100px;
+ padding: 5px 35px 5px 5px;
+ height: 35px;
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ appearance: none;
+ font-size: 36px;
+ font-weight: bold;
+  background:  url("/assets/images/icon-arrow-down.png") 98% / 5% no-repeat #eee;
+}
+.logo{
+  margin-top: 5%;
 }
