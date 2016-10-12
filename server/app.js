@@ -90,7 +90,7 @@ app.post("/createRandom", function(req,res){
   var quizWords=[];
   const MAX_SYLLABLES = 1;
   const MAX_CHARS = 7;
-  const MAX_WORDS=10;
+  const MAX_WORDS=12;
   //this should get the syllable count, and filter out words that have too many syllables or charachters
   for (var i = 0; i < req.body.quiz.length; i++) {
     var word = req.body.quiz[i];

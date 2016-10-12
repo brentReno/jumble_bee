@@ -14,12 +14,14 @@
 <div class="row">
   <div class="inputDiv">
     <div  class ="row inputs" id="nameNum" >
-      <label for="quantity">How many words?</label>
-      <input type="checkbox" id="quantity" ng-model="numWordsIn.six" ng-true-value=6> 6
-      <input type="checkbox" id="quantity" ng-model="numWordsIn.twelve" ng-true-value=12> 12
-      <input type="checkbox" id="quantity" ng-model="numWordsIn.eighteen" ng-true-value=18> 18
-      <label for="name"> Give it a name!</label>
-      <input type="text" name="name" value="" id="name" placeholder="Ex: Birds Quiz"  ng-model="nameIn">
+      <label class="col-md-2 col-md-offset-2"for="quantity">How many words?</label>
+      <div class="col-md-2">
+        <input  type="checkbox" id="quantity" ng-model="numWordsIn.six" ng-true-value=6> 6
+        <input  type="checkbox" id="quantity" ng-model="numWordsIn.twelve" ng-true-value=12> 12
+        <input  type="checkbox" id="quantity" ng-model="numWordsIn.eighteen" ng-true-value=18> 18
+      </div>
+      <label class="col-md-2" for="name"> Give it a name!</label>
+      <input class="col-md-2" type="text" name="name" value="" id="name" placeholder="Ex: Birds Quiz"  ng-model="nameIn">
     </div>
   </div>
 </div>

@@ -1,4 +1,9 @@
-
+label{
+  color: #444444;
+}
+input{
+  border-color: #444444;
+}
 .opacity{
     background-color: rgba(255,255,255,0.9);
 }
@@ -34,9 +39,15 @@ margin-top: 2%;
   margin-top:7%;
   margin-bottom: 2%;
 }
+.playgame{
+  margin-top:1%;
+  margin-bottom: 0;
+}
 .nav{
   background-color: #444444;
   border-bottom: 5px solid #BFC0C0;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .nav a{
   color: #FFD400;
@@ -165,11 +176,15 @@ select{
   font-weight: 300;
   font-style:italic;
 }
-.tryAgain{
+.tryAgain, .check{
   background-color: #ffd400;
   font-size: 18px;
   color: #444444;
   font-weight: bold;
   text-align: center;
   margin-top: 2%;
+}
+
+.check{
+  margin-top:0;
 }
