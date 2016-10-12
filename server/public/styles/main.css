@@ -190,3 +190,44 @@ select{
 .check{
   margin-top:0;
 }
+
+.xs{
+  display: block;
+  width:1%;
+  height: 1%;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.s{
+  display: block;
+  width:3%;
+  height: 3%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.m{
+  display: block;
+  width:7%;
+  height: 7%;
+  margin-top:3%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.l{
+  display: block;
+  width:12%;
+  height: 12%;
+  margin-top:3%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.xl{
+  display: block;
+  width:20%;
+  height: 20%;
+  margin-top:3%;
+  margin-left: auto;
+  margin-right: auto;
+}

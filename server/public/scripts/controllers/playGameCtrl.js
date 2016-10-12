@@ -7,6 +7,13 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
   $scope.correctAnswers=[];
   jumbledWords=[];
 
+  //set up success display
+  $scope.correct= 0;
+  $scope.showBee= false;
+  $scope.hideBee=true;
+
+
+
   //get quiz words to jumble
   $scope.quizWords = quizService.getQuiz();
   //get quiz words, as answer key
@@ -36,7 +43,32 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
       document.getElementById(id).value ="";
     }
      else if(userAnswer == $scope.correctAnswers[index]){
-      document.getElementById(responseId).innerHTML = "Way to go!!!!";
+       $scope.correct++;
+       console.log($scope.correct);
+       console.log($scope.correctAnswers.length);
+       $scope.percent = $scope.correct/$scope.correctAnswers.length;
+       console.log($scope.percent);
+       if($scope.percent <= 0.2){
+         console.log("show");
+         $scope.showBee = true;
+         $scope.hideBee = false;
+       }
+       if($scope.percent==0.4){
+         console.log("small");
+         document.getElementById("beeImage").className = "s";
+       }
+       if($scope.percent ==0.6){
+         console.log("medium");
+         document.getElementById("beeImage").className = "m";
+       }
+       if($scope.percent ==0.8){
+         console.log("large");
+         document.getElementById("beeImage").className = "l";
+       }
+       if($scope.percent ==1){
+         console.log("x-large");
+         document.getElementById("beeImage").className = "xl";
+       }
     }
   };
 
