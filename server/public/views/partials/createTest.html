@@ -30,16 +30,19 @@
 </div>
 </div>
 
-
-<div class ="row" id="inputs" ng-hide="showInputs">
-    <div data-ng-repeat="i in range">
-      <input type="text" name="name" value="" id={{i+1}} placeholder="Enter word here">
+<div ng-hide="showInputs">
+      <div class ="row inputalign">
+      <div ng-repeat="i in range" name="quizInput">
+        <label class="col-md-2">Enter Word {{i+1}}</label>
+        <input class="col-md-2" type="text" value="" id={{i+1}} placeholder="Enter word here">
+    </div>
   </div>
-  <button ng-hide="showOnError" ng-repeat-end ng-click="createQuiz()"> Create Quiz </button>
+  <div class="row">
+    <button ng-hide="showOnError" ng-repeat-end ng-click="createQuiz()" class="btn createbtn col-md-offset-5 col-md-2"> Create Quiz </button>
+  </div>
 </div>
-
 <!-- If an error occurs -->
-<div ng-show="showOnError" id="errorsDispaly">
+<div ng-show="showOnError">
   <div ng-repeat=" word in wrongWords">
   <p> You entered {{word.misspelled}}.</p>
   <p> Did you mean: {{word.suggested[0]}}, {{word.suggested[1]}}, {{word.suggested[2]}}, {{word.suggested[3]}}, {{word.suggested[4]}}?</p>

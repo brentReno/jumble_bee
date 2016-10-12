@@ -1,3 +1,5 @@
+
+
 .opacity{
     background-color: rgba(255,255,255,0.9);
 }
@@ -123,4 +125,19 @@ select{
 .inputDiv{
   text-align: center;
   font-size: 18px;
+}
+
+.createbtn{
+  margin-top: 3%;
+  background-color: #ffd400;
+  font-size: 18px;
+  color: #444444;
+  font-weight: bold;
+  text-align: center;
+}
+.inputalign{
+  text-align: center;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
 }

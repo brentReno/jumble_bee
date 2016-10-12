@@ -1,11 +1,12 @@
 //globals
 var numWords;
 var quizName;
-var range =[];
 var quiz =[];
 var addingWords;
 var updatedWord;
 myApp.controller("createTestController", ["$scope","$http", "quizService", "$location",function($scope, $http, quizService, $location){
+  //empty range
+  var range =[];
   console.log("This is Create");
   //check for log in
   //get user data
@@ -27,15 +28,17 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
     console.log("in showInputs");
     //collect the number of words
     numWords = $scope.numWordsIn;
+
     //collect the name of the quiz
-      quizName = $scope.nameIn;
-      console.log(numWords,quizName);
-      $scope.showInputs= false;
-      // create range
-      for (var i = 0; i <numWords; i++) {
-        range.push(i);
-      }
-      $scope.range=range;
+    quizName = $scope.nameIn;
+    console.log(numWords,quizName);
+    $scope.showInputs= false;
+    // create range
+    for (var i = 0; i <numWords; i++) {
+      range.push(i);
+    }
+    $scope.range=range;
+
   };
 
   //collect words from inputs
