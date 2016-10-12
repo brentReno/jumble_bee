@@ -30,10 +30,13 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
     console.log(userAnswer);
     //compare the users answer to the answer key array
     if (userAnswer !== $scope.correctAnswers[index]){
-      document.getElementById(responseId).innerHTML = "So close, try again!";
+      console.log("in wrong");
+      console.log(document.getElementById(id).placeholder);
+      document.getElementById(id).placeholder="Try Again";
+      document.getElementById(id).value ="";
     }
      else if(userAnswer == $scope.correctAnswers[index]){
-      document.getElementById(responseId).innerHTML = "Way to go!!!! You got that right!";
+      document.getElementById(responseId).innerHTML = "Way to go!!!!";
     }
   };
 

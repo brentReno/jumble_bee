@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-md-4" ng-hide="hidegame"ng-repeat=" word in jumbledWords">
         <p class="playgame">{{word}}</p>
-        <input type="text" name="name" value="" id="question-{{$index}}">
-        <p class="playgame" id="response-{{$index}}"></p>
+        <input type="text" name="question" value="" id="question-{{$index}}" placeholder="enter answer">
+        <p id="response-{{$index}}"></p>
         <button class="btn check" type="button" name="button"  ng-click="checkAnswer($index)"> Check Answer</button>
       </div>
     </div>
