@@ -26,9 +26,7 @@
 <div class="row">
   <button class="col-md-2 col-md-offset-5 btn next"  ng-click="showInputs()">Next</button>
 </div>
-  <div class="row">
-    <img src="../assets/images/honey.png"  class="col-md-2 col-md-offset-5 logo"/>
-  </div>
+
 </div>
 </div>
 
@@ -45,12 +43,17 @@
 </div>
 <!-- If an error occurs -->
 <div ng-show="showOnError">
-  <div ng-repeat=" word in wrongWords">
-  <p> You entered {{word.misspelled}}.</p>
-  <p> Did you mean: {{word.suggested[0]}}, {{word.suggested[1]}}, {{word.suggested[2]}}, {{word.suggested[3]}}, {{word.suggested[4]}}?</p>
+  <p class="errorHeader"> Oh No! Something is not quite right.</p>
+  <div class="col-md-4 col-md-offset-4 misspelled" ng-repeat=" word in wrongWords">
+  <p class="entered"> You entered: <span>{{word.misspelled}}</span>.</p>
+  <p class="suggested"> Did you mean: <span>{{word.suggested[0]}}, {{word.suggested[1]}}, {{word.suggested[2]}}, {{word.suggested[3]}}, {{word.suggested[4]}}</span>?</p>
 </div>
-<p>Please  update any misspelled words, and try again</p>
-<button ng-click="tryAgain()"> Try Again</button>
+<p class="col-md-4 col-md-offset-4 misspelled">Please fix your words, and try again</p>
+<button class="col-md-2 col-md-offset-5 btn tryAgain" ng-click="tryAgain()"> Try Again</button>
 </div>
+  <div class="row">
+    <img src="../assets/images/honey.png"  class="col-md-2 col-md-offset-5 logo"/>
+  </div>
 </div>
+
 </div>
