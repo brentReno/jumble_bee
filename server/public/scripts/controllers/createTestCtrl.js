@@ -27,7 +27,16 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
   $scope.showInputs = function(){
     console.log("in showInputs");
     //collect the number of words
-    numWords = $scope.numWordsIn;
+  if($scope.numWordsIn.six){
+    numWords = $scope.numWordsIn.six;
+  }
+  if($scope.numWordsIn.twelve){
+    numWords = $scope.numWordsIn.twelve;
+  }
+  if($scope.numWordsIn.eighteen){
+    numWords = $scope.numWordsIn.eighteen;
+  }
+
 
     //collect the name of the quiz
     quizName = $scope.nameIn;

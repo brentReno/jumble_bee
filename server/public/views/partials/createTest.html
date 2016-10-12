@@ -15,7 +15,9 @@
   <div class="inputDiv">
     <div  class ="row inputs" id="nameNum" >
       <label for="quantity">How many words?</label>
-      <input type="number" min="5" max="20" id="quantity" ng-model="numWordsIn">
+      <input type="checkbox" id="quantity" ng-model="numWordsIn.six" ng-true-value=6> 6
+      <input type="checkbox" id="quantity" ng-model="numWordsIn.twelve" ng-true-value=12> 12
+      <input type="checkbox" id="quantity" ng-model="numWordsIn.eighteen" ng-true-value=18> 18
       <label for="name"> Give it a name!</label>
       <input type="text" name="name" value="" id="name" placeholder="Ex: Birds Quiz"  ng-model="nameIn">
     </div>
