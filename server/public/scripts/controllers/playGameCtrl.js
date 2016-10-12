@@ -53,19 +53,19 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
          $scope.showBee = true;
          $scope.hideBee = false;
        }
-       if($scope.percent==0.4){
+       if($scope.percent > 0.2 && $scope.percent <= 0.4){
          console.log("small");
          document.getElementById("beeImage").className = "s";
        }
-       if($scope.percent ==0.6){
+       if($scope.percent > 0.4 && $scope.percent <= 0.6){
          console.log("medium");
          document.getElementById("beeImage").className = "m";
        }
-       if($scope.percent ==0.8){
+       if($scope.percent > 0.6 && $scope.percent <= 0.8){
          console.log("large");
          document.getElementById("beeImage").className = "l";
        }
-       if($scope.percent ==1){
+       if($scope.percent > 0.8 && $scope.percent < 1){
          console.log("x-large");
          document.getElementById("beeImage").className = "xl";
        }
