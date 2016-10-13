@@ -54,15 +54,17 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", fun
        if($scope.correct == 1){
          console.log("show");
          $scope.showBee = true;
-       }
+        }
        else if($scope.correct > 1 && $scope.percent < 1){
          $scope.showBee = false;
          $timeout($scope.changeBee, 500);
 
-  }
-    if($scope.percent== 1){
-      console.log("this will do something Awesome!!");
-     }
+        }
+      if($scope.percent== 1){
+        console.log("this will do something Awesome!!");
+        $scope.showBee = false;
+        $timeout($scope.bounceBee, 500);
+       }
 
   $scope.changeBee= function(){
      // in th else if
@@ -71,15 +73,15 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", fun
      console.log("width:",document.getElementById('beeImage').style.width, "height:",document.getElementById('beeImage').style.height);
      // set percentage increase
      if($scope.correctAnswers.length<=6){
-      increase = 5;
+      increase = 6;
       console.log("increase:", increase);
     }
     else if($scope.correctAnswers.length<=12){
-      increase = 4;
+      increase = 5;
       console.log("increase:", increase);
     }
     else if($scope.correctAnswers.length<=18){
-      increase = 3;
+      increase = 2.5;
       console.log("increase:", increase);
     }
      //place width and height in a var
@@ -100,5 +102,11 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", fun
      $scope.showBee = true;
     };
   }
+  $scope.bounceBee= function(){
+    console.log(document.getElementById("beeImage").getAttribute("class"));
+    var bee = document.getElementById("beeImage");
+    bee.className += " bounce";
+    $scope.showBee = true;
+  };
  };
 }]);
