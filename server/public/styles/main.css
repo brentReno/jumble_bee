@@ -50,6 +50,10 @@ margin-top: 2%;
   margin-top: 0;
 
 }
+#createSub, #loadSub{
+  text-align: center;
+  margin-top: 0;
+}
 .playgame{
   margin-top:1%;
   margin-bottom: 0;
@@ -86,7 +90,7 @@ margin-top: 2%;
   margin-top: 2%;
   margin-bottom: 1%;
 }
-.create{
+.create, .load{
   text-align: center;
   margin-top: 2%;
   margin-bottom: 3%;

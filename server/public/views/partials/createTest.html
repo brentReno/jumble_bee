@@ -4,8 +4,9 @@
   <div class="row">
     <h3 class="col-md-12 heading create"> Make a New Quiz!</h3>
   </div>
-  <div ng-hide="showCreate">
-    <p > Please <a ng-click="logIn()">log in</a> to use this feature</p>
+  <div ng-hide="showCreate" class="row">
+    <p class="col-md-4 col-md-offset-4" id="createSub"> Please, <strong>log in</strong> to create a quiz.</p>
+    <button ng-click="logIn()" class=" col-md-2 col-md-offset-5 btn logIn"> Log In </button>
   </div>
 
 <!-- Logged in -->
