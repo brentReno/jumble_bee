@@ -199,6 +199,15 @@ select{
     opacity: 1;
   }
 }
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
 .beeImage{
   display:block;
   margin-left: auto;
@@ -206,4 +215,7 @@ select{
 }
 .beeImage.ng-hide-remove{
   animation:1s fadeIn ease;
+}
+.beeImage.ng-hide-add{
+  animation: 0.5s fadeOut ease;
 }

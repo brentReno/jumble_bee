@@ -1,5 +1,5 @@
 var jumbledWords=[];
-myApp.controller("playGameController", ["$scope", "quizService", function($scope, quizService){
+myApp.controller("playGameController", ["$scope", "quizService", "$timeout", function($scope, quizService, $timeout){
   console.log("This is Play ");
 
   //empty arrays
@@ -27,7 +27,7 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
 
   //check answers function
   $scope.checkAnswer = function(index){
-    $scope.showBee = true;
+
     console.log("scope.showBee", $scope.showBee);
     //get id of the question
     var id = "question-"+index;
@@ -50,47 +50,55 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
        console.log($scope.correctAnswers.length);
        $scope.percent = $scope.correct/$scope.correctAnswers.length;
        console.log($scope.percent);
+
        if($scope.correct == 1){
          console.log("show");
+         $scope.showBee = true;
        }
        else if($scope.correct > 1 && $scope.percent < 1){
-         // in th else if
-         console.log("the else if is working!");
-         //get image width and height
-         console.log("width:",document.getElementById('beeImage').style.width, "height:",document.getElementById('beeImage').style.height);
-         // set percentage increase
-         if($scope.correctAnswers.length<=6){
-          increase = 5;
-          console.log("increase:", increase);
-        }
-        else if($scope.correctAnswers.length<=12){
-          increase = 4;
-          console.log("increase:", increase);
-        }
-        else if($scope.correctAnswers.length<=18){
-          increase = 3;
-          console.log("increase:", increase);
-        }
-         //place width and height in a var
-         var width = document.getElementById('beeImage').style.width;
-         var height= document.getElementById('beeImage').style.height;
-         //remove percent
-         width= width.replace(/%/, "");
-         height= height.replace(/%/, "");
-         //do some math
-         width= Number(width)+increase;
-         height= Number(height)+increase;
-         //re-add the %
-         width = width+"%";
-         height= height+"%";
-         //set new style
-         document.getElementById('beeImage').style.width = width;
-         document.getElementById('beeImage').style.height= height;
-       }
-       if($scope.percent== 1){
-         console.log("this will do something Awesome!!");
-       }
-    }
-  };
+         $scope.showBee = false;
+         $timeout($scope.changeBee, 500);
 
+  }
+    if($scope.percent== 1){
+      console.log("this will do something Awesome!!");
+     }
+
+  $scope.changeBee= function(){
+     // in th else if
+     console.log("the else if is working!");
+     //get image width and height
+     console.log("width:",document.getElementById('beeImage').style.width, "height:",document.getElementById('beeImage').style.height);
+     // set percentage increase
+     if($scope.correctAnswers.length<=6){
+      increase = 5;
+      console.log("increase:", increase);
+    }
+    else if($scope.correctAnswers.length<=12){
+      increase = 4;
+      console.log("increase:", increase);
+    }
+    else if($scope.correctAnswers.length<=18){
+      increase = 3;
+      console.log("increase:", increase);
+    }
+     //place width and height in a var
+     var width = document.getElementById('beeImage').style.width;
+     var height= document.getElementById('beeImage').style.height;
+     //remove percent
+     width= width.replace(/%/, "");
+     height= height.replace(/%/, "");
+     //do some math
+     width= Number(width)+increase;
+     height= Number(height)+increase;
+     //re-add the %
+     width = width+"%";
+     height= height+"%";
+     //set new style
+     document.getElementById('beeImage').style.width = width;
+     document.getElementById('beeImage').style.height= height;
+     $scope.showBee = true;
+    };
+  }
+ };
 }]);
