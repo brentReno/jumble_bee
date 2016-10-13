@@ -10,6 +10,7 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", fun
   //set up success display
   $scope.correct= 0;
   $scope.showBee= false;
+  $scope.showCongrats =false;
 
 
 
@@ -107,6 +108,7 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", fun
     var bee = document.getElementById("beeImage");
     bee.className += " bounce";
     $scope.showBee = true;
+    $scope.showCongrats = true;
   };
  };
 }]);
