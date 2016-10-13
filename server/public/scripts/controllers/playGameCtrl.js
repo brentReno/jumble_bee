@@ -48,26 +48,34 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
        console.log($scope.correctAnswers.length);
        $scope.percent = $scope.correct/$scope.correctAnswers.length;
        console.log($scope.percent);
-       if($scope.percent <= 0.2){
+       if($scope.correct == 1){
          console.log("show");
          $scope.showBee = true;
          $scope.hideBee = false;
        }
-       if($scope.percent > 0.2 && $scope.percent <= 0.4){
-         console.log("small");
-         document.getElementById("beeImage").className = "s";
+       else if($scope.correct > 1 && $scope.percent < 1){
+         // in th else if
+         console.log("the else if is working!");
+         //get image width and height
+         console.log("width:",document.getElementById('beeImage').style.width, "height:",document.getElementById('beeImage').style.height);
+         //place width and height in a var
+         var width = document.getElementById('beeImage').style.width;
+         var height= document.getElementById('beeImage').style.height;
+         //remove percent
+         width= width.replace(/%/, "");
+         height= height.replace(/%/, "");
+         //do some math
+         width= Number(width)+3;
+         height= Number(height)+3;
+         //re-add the %
+         width = width+"%";
+         height= height+"%";
+         //set new style
+         document.getElementById('beeImage').style.width = width;
+         document.getElementById('beeImage').style.height= height;
        }
-       if($scope.percent > 0.4 && $scope.percent <= 0.6){
-         console.log("medium");
-         document.getElementById("beeImage").className = "m";
-       }
-       if($scope.percent > 0.6 && $scope.percent <= 0.8){
-         console.log("large");
-         document.getElementById("beeImage").className = "l";
-       }
-       if($scope.percent > 0.8 && $scope.percent < 1){
-         console.log("x-large");
-         document.getElementById("beeImage").className = "xl";
+       if($scope.percent== 1){
+         console.log("this will do something Awesome!!");
        }
     }
   };
