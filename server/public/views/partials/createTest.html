@@ -34,7 +34,7 @@
 
 <div ng-hide="showInputs">
       <div class ="row inputalign">
-      <div ng-repeat="i in range" name="quizInput">
+      <div ng-repeat="i in range track by $index" name="quizInput">
         <label class="col-md-2">Enter Word {{i+1}}</label>
         <input class="col-md-2" type="text" value="" id={{i+1}} placeholder="Enter word here">
     </div>
