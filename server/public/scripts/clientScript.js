@@ -2,7 +2,7 @@
 console.log("Hello from the Client Script!");
 
 //create angular app
-var myApp = angular.module("myApp", ["ngRoute"]);
+var myApp = angular.module("myApp", ["ngRoute", "ngAnimate"]);
 
 //config NG routes
 myApp.config(["$routeProvider", function($routeProvider){

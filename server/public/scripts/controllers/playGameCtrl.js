@@ -10,7 +10,6 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
   //set up success display
   $scope.correct= 0;
   $scope.showBee= false;
-  $scope.hideBee=true;
 
 
 
@@ -28,6 +27,8 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
 
   //check answers function
   $scope.checkAnswer = function(index){
+    $scope.showBee = true;
+    console.log("scope.showBee", $scope.showBee);
     //get id of the question
     var id = "question-"+index;
     //get the id of the response
@@ -51,8 +52,6 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
        console.log($scope.percent);
        if($scope.correct == 1){
          console.log("show");
-         $scope.showBee = true;
-         $scope.hideBee = false;
        }
        else if($scope.correct > 1 && $scope.percent < 1){
          // in th else if
