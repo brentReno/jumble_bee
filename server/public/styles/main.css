@@ -32,7 +32,13 @@ font-weight: bold;
 text-align: center;
 margin-top: 2%;
 }
-
+.row .logIn{
+  background-color: #ffd400;
+  font-size: 18px;
+  color: #444444;
+  font-weight: bold;
+  text-align: center;
+}
 
 .row p{
   font-size: 22px;
@@ -42,7 +48,7 @@ margin-top: 2%;
 }
 #congrats{
   margin-top: 0;
-  
+
 }
 .playgame{
   margin-top:1%;

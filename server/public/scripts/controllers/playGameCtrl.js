@@ -61,7 +61,7 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", fun
          $timeout($scope.changeBee, 500);
 
         }
-      if($scope.percent== 1){
+      if($scope.percent == 1){
         console.log("this will do something Awesome!!");
         $scope.showBee = false;
         $timeout($scope.bounceBee, 500);

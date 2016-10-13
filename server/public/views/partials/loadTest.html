@@ -1,8 +1,12 @@
-<div ng-hide=showLoad>
-  <p> Please, <a ng-click="logIn()">log in</a> to load your tests.</p>
-</div>
-  <div class="container" ng-show="showLoad">
+  <div class="container">
     <div class ="opacity">
+          <div class="row" ng-hide='showLoad'>
+            <div >
+              <p class="col-md-5 col-md-offset-4"> Please, <strong>log in</strong> to load your tests.</p>
+              <button ng-click="logIn()" class=" col-md-2 col-md-offset-5 btn logIn"> Log In </button>
+            </div>
+          </div>
+      <div ng-show="showLoad">
         <div class="row">
           <h3 class="col-md-12 center">Which quiz would you like to practice?</h3>
         </div>
@@ -11,6 +15,7 @@
             <option value="" disabled> Select A Quiz</option>
           </select>
       </div>
+    </div>
       <div class="row">
         <img src="../assets/images/bee-hive.png"  class="col-md-2 col-md-offset-5 logo"/>
       </div>
