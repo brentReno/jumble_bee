@@ -43,6 +43,7 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
       document.getElementById(id).value ="";
     }
      else if(userAnswer == $scope.correctAnswers[index]){
+       var increase;
        $scope.correct++;
        console.log($scope.correct);
        console.log($scope.correctAnswers.length);
@@ -58,6 +59,19 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
          console.log("the else if is working!");
          //get image width and height
          console.log("width:",document.getElementById('beeImage').style.width, "height:",document.getElementById('beeImage').style.height);
+         // set percentage increase
+         if($scope.correctAnswers.length<=6){
+          increase = 5;
+          console.log("increase:", increase);
+        }
+        else if($scope.correctAnswers.length<=12){
+          increase = 4;
+          console.log("increase:", increase);
+        }
+        else if($scope.correctAnswers.length<=18){
+          increase = 3;
+          console.log("increase:", increase);
+        }
          //place width and height in a var
          var width = document.getElementById('beeImage').style.width;
          var height= document.getElementById('beeImage').style.height;
@@ -65,8 +79,8 @@ myApp.controller("playGameController", ["$scope", "quizService", function($scope
          width= width.replace(/%/, "");
          height= height.replace(/%/, "");
          //do some math
-         width= Number(width)+3;
-         height= Number(height)+3;
+         width= Number(width)+increase;
+         height= Number(height)+increase;
          //re-add the %
          width = width+"%";
          height= height+"%";
