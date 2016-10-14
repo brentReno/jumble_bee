@@ -23,6 +23,7 @@ input{
   color: #444444;
   font-weight: bolder;
   text-align: center;
+  border-bottom: 4px solid #444444
 }
 .row .next{
 background-color: #ffd400;
@@ -31,6 +32,7 @@ color: #444444;
 font-weight: bold;
 text-align: center;
 margin-top: 2%;
+border-bottom: 4px solid #444444
 }
 .row .logIn{
   background-color: #ffd400;
@@ -38,6 +40,16 @@ margin-top: 2%;
   color: #444444;
   font-weight: bold;
   text-align: center;
+  border-bottom: 4px solid #444444
+}
+.row .random{
+  background-color: #ffd400;
+  font-size: 16px;
+  color: #444444;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2%;
+  border-bottom: 4px solid #444444
 }
 
 .row p{
@@ -50,9 +62,13 @@ margin-top: 2%;
   margin-top: 0;
 
 }
-#createSub, #loadSub{
+#createSub, #loadSub, #randomSub{
   text-align: center;
   margin-top: 0;
+}
+#randomSub{
+  margin-top: 1%;
+  margin-bottom: 0;
 }
 .playgame{
   margin-top:1%;
@@ -164,6 +180,7 @@ select{
   color: #444444;
   font-weight: bold;
   text-align: center;
+  border-bottom: 4px solid #444444
 }
 .inputalign{
   text-align: center;
@@ -199,11 +216,21 @@ select{
   font-weight: bold;
   text-align: center;
   margin-top: 2%;
+  border-bottom: 4px solid #444444
 }
 
 .check{
   margin-top:0;
 }
+.example{
+  text-align: center;
+  nmargin-top: 1%;
+}
+.randomInputs{
+  margin-top: 3%;
+}
+
+/*All animations come from here https://daneden.github.io/animate.css/*/
 @keyframes fadeIn {
   from {
     opacity: 0;
