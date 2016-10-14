@@ -20,41 +20,49 @@ myApp.controller("homeController", ["$scope", '$http', "$location", 'quizService
     }
   }; // end init function
 
-//login
-$scope.logIn =function(){
-  quizService.logIn();
-};
+  //login
+  $scope.logIn =function(){
+    quizService.logIn();
+  };
 
-//logout function
-$scope.logOut = function(){
-    //call logOut url
-    $http({
-      method:'GET',
-      url: logOutURL,
-    }).then(function(data){
-      if(data.data == 'OK'){
-        emptyLocalStorage();
-        $scope.showUser=false;
-      }//end if
-    });//end http and then
-  };//end logout
+  //logout function
+  $scope.logOut = function(){
+      //call logOut url
+      $http({
+        method:'GET',
+        url: logOutURL,
+      }).then(function(data){
+        if(data.data == 'OK'){
+          emptyLocalStorage();
+          $scope.showUser=false;
+        }//end if
+      });//end http and then
+    };//end logout
 
-//load click
-$scope.goLoad =function(){
-  $location.url('/loadTest');
-};
-//random click
-$scope.goRandom=function(){
-  $location.url("randomTest");
-};
+  //load click
+  $scope.goLoad =function(){
+    $location.url('/loadTest');
+  };
+  //random click
+  $scope.goRandom=function(){
+    $location.url("randomTest");
+  };
 
-//create click
-$scope.goCreate = function(){
-  $location.url("/createTest");
-};
-
-//run on load
-$scope.init();
+  //create click
+  $scope.goCreate = function(){
+    $location.url("/createTest");
+  };
+  //bee dance
+  $scope.beeDance= function(){
+    $scope.bee = document.getElementById("beePicture");
+    $scope.bee.className += " dance";
+  };
+  $scope.removeDance=function(){
+    $scope.bee = document.getElementById("beePicture");
+    $scope.bee.className = "beePic";
+  };
+  //run on load
+  $scope.init();
 }]);
 
 var emptyLocalStorage =function(){

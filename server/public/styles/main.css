@@ -23,7 +23,7 @@ input{
   color: #444444;
   font-weight: bolder;
   text-align: center;
-  border-bottom: 4px solid #444444
+
 }
 .row .next{
 background-color: #ffd400;
@@ -32,7 +32,7 @@ color: #444444;
 font-weight: bold;
 text-align: center;
 margin-top: 2%;
-border-bottom: 4px solid #444444
+
 }
 .row .logIn{
   background-color: #ffd400;
@@ -40,7 +40,7 @@ border-bottom: 4px solid #444444
   color: #444444;
   font-weight: bold;
   text-align: center;
-  border-bottom: 4px solid #444444
+
 }
 .row .random{
   background-color: #ffd400;
@@ -49,7 +49,7 @@ border-bottom: 4px solid #444444
   font-weight: bold;
   text-align: center;
   margin-top: 2%;
-  border-bottom: 4px solid #444444
+
 }
 
 .row p{
@@ -180,7 +180,7 @@ select{
   color: #444444;
   font-weight: bold;
   text-align: center;
-  border-bottom: 4px solid #444444
+
 }
 .inputalign{
   text-align: center;
@@ -216,7 +216,7 @@ select{
   font-weight: bold;
   text-align: center;
   margin-top: 2%;
-  border-bottom: 4px solid #444444
+
 }
 
 .check{
@@ -291,4 +291,29 @@ select{
 .beeImage.ng-hide-remove.bounce {
   animation-name: bounce;
   transform-origin: center bottom;
+}
+.btn:hover {
+	background: rgba(0,0,0,0);
+
+	box-shadow: inset 0 0 0 3px #ffd400;
+}
+
+@keyframes dance {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+.beePic.dance{
+  animation: dance 0.5s;
 }

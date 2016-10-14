@@ -9,11 +9,11 @@
     <div class ="col-md-7">
       <p class="col-md-offset-1"> If this is your first time here,<b> Sign Up</b> for an account. Otherwise, <b>Log In</b> and pick up where you left off.</p>
       </p>
-      <button class="btn start  col-md-offset-5" type="button" name="login" ng-click="logIn()"> Get Started</button>
+      <button class="btn start  col-md-offset-5" type="button" name="login" ng-click="logIn()" ng-mouseover="beeDance()" ng-mouseleave="removeDance()"> Get Started</button>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5" >
       <!-- This is a test image also move styling to stylesheet -->
-      <img style="width:90%;" src="../assets/images/bee_img.png"/>
+      <img  class="beePic" id="beePicture" style="width:90%;" src="../assets/images/bee_img.png"/>
     </div>
     </div>
   </div>
