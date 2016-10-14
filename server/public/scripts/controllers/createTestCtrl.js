@@ -52,7 +52,7 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
 
   //collect words from inputs
   $scope.createQuiz= function(){
-
+    quiz=[];
     console.log("in create quiz");
     for (var i = 0; i < numWords; i++) {
       //get input data
