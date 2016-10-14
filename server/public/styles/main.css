@@ -317,3 +317,13 @@ select{
 .beePic.dance{
   animation: dance 0.5s;
 }
+.quizOptions img{
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.quizOptions .second{
+  margin-top: 5%;
+}
+.quizOptions .third{
+  margin-top: 7%;
+}
