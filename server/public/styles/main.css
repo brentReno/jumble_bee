@@ -345,6 +345,7 @@ select{
   height: 50px;
   background-color: #444444;
   border-top: 5px solid #BFC0C0;
+  position: relative;
 }
 .main #copy{
   margin-top: 0;

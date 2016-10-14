@@ -92,31 +92,31 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", "$l
      console.log("width:",document.getElementById('beeImage').style.width, "height:",document.getElementById('beeImage').style.height);
      // set percentage increase
      if($scope.correctAnswers.length<=6){
-      increase = 6;
+      increase = 45;
       console.log("increase:", increase);
     }
     else if($scope.correctAnswers.length<=12){
-      increase = 5;
+      increase = 20;
       console.log("increase:", increase);
     }
     else if($scope.correctAnswers.length<=18){
-      increase = 2.5;
+      increase = 6;
       console.log("increase:", increase);
     }
      //place width and height in a var
-     var width = document.getElementById('beeImage').style.width;
+    //  var width = document.getElementById('beeImage').style.width;
      var height= document.getElementById('beeImage').style.height;
      //remove percent
-     width= width.replace(/%/, "");
-     height= height.replace(/%/, "");
+    //  width= width.replace(/px/, "");
+     height= height.replace(/px/, "");
      //do some math
-     width= Number(width)+increase;
+    //  width= Number(width)+increase;
      height= Number(height)+increase;
-     //re-add the %
-     width = width+"%";
-     height= height+"%";
+     //re-add the px
+    //  width = width+"px";
+     height= height+"px";
      //set new style
-     document.getElementById('beeImage').style.width = width;
+    //  document.getElementById('beeImage').style.width = width;
      document.getElementById('beeImage').style.height= height;
      $scope.showBee = true;
     };
