@@ -3,17 +3,41 @@
         <div class="row">
           <h3 class="col-md-12  heading load">Load a Quiz!</h3>
         </div>
-          <div class="row" ng-hide='showLoad'>
-            <div >
-              <p class="col-md-4 col-md-offset-4" id="loadSub"> Please, <strong>log in</strong> to load your quizzes.</p>
-              <button ng-click="logIn()" class="col-md-2 col-md-offset-5 btn logIn"> Log In </button>
+        <div ng-hide="showLoadImage">
+            <div class="row" ng-hide='showLoad'>
+              <div >
+                <p class="col-md-4 col-md-offset-4" id="loadSub"> Please, <strong>log in</strong> to load your quizzes.</p>
+                <button ng-click="logIn()" class="col-md-2 col-md-offset-5 btn logIn"> Log In </button>
+              </div>
+            </div>
+            <div ng-show="showLoad">
+              <div class="row">
+                <select class="col-md-4 col-md-offset-4 dropdown"  name="userQuizzes" ng-model="selectedQuiz" ng-options= " quiz as quiz.name for quiz in savedQuizzes " ng-change="changedValue(selectedQuiz)">
+                  <option value="" disabled> Select A Quiz</option>
+                </select>
             </div>
           </div>
-      <div ng-show="showLoad">
-        <div class="row">
-          <select class="col-md-4 col-md-offset-4 dropdown"  name="userQuizzes" ng-model="selectedQuiz" ng-options= " quiz as quiz.name for quiz in savedQuizzes " ng-change="changedValue(selectedQuiz)">
-            <option value="" disabled> Select A Quiz</option>
-          </select>
+        </div>
+    <div class="row" ng-show="showLoadImage">
+      <div class='uil-ellipsis-css col-md-3 col-md-offset-3' style='transform:scale(0.6);'>
+        <div class="ib">
+          <div class="circle">
+            <div>
+            </div>
+          </div>
+          <div class="circle">
+            <div>
+            </div>
+          </div>
+          <div class="circle">
+            <div>
+            </div>
+          </div>
+          <div class="circle">
+            <div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
       <div class="row">
