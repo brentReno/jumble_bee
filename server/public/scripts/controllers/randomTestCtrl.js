@@ -3,6 +3,7 @@ var dataMuseReq;
 var randomTest=[];
 myApp.controller("randomTestController", ["$scope","$http", "$location", "quizService", function($scope,$http, $location, quizService){
   console.log("This is Random");
+  $scope.showLoad = false;
   $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
   //random quiz click
   $scope.randomQuiz = function(){
@@ -26,6 +27,7 @@ myApp.controller("randomTestController", ["$scope","$http", "$location", "quizSe
       dataMuseReq = 'words?topics='+subjectOne + "," + subjectTwo;
     }
       // make call to dataMuse for random words
+      $scope.showLoad= true;
       $http({
         method:"GET",
         url:"https://api.datamuse.com/" + dataMuseReq +"&max=30"
