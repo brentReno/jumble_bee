@@ -1,5 +1,5 @@
 var jumbledWords=[];
-myApp.controller("playGameController", ["$scope", "quizService", "$timeout", function($scope, quizService, $timeout){
+myApp.controller("playGameController", ["$scope", "quizService", "$timeout", "$location",  function($scope, quizService, $timeout, $location){
   console.log("This is Play ");
   //empty arrays
   $scope.quizWords = [];
@@ -10,8 +10,6 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", fun
   $scope.correct= 0;
   $scope.showBee= false;
   $scope.showCongrats =false;
-
-
 
   //get quiz words to jumble
 
@@ -30,7 +28,17 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", fun
     if($scope.jumbledWords.length < 1){
       console.log("jumble is empty");
       $scope.showGame = false;
+      //load click
+      $scope.goLoad =function(){
+        $location.url('/loadTest');
+      };
+      //random click
+      $scope.goRandom=function(){
+        $location.url("/randomTest");
+      };
+
     }
+
     else if( $scope.jumbledWords.length > 1) {
       console.log("jumble is full");
       $scope.showGame = true;
@@ -120,6 +128,8 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", fun
     $scope.showBee = true;
     $scope.showCongrats = true;
   };
+
+
 
  };
 }]);

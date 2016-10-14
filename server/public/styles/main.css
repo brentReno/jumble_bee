@@ -317,13 +317,24 @@ select{
 .beePic.dance{
   animation: dance 0.5s;
 }
-.quizOptions img{
-  margin-left: 3%;
-  margin-right: 3%;
+.quizOptions{
+  width: 55%;
 }
-.quizOptions .second{
-  margin-top: 5%;
+
+.labels .optionLabel{
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444444;
 }
-.quizOptions .third{
-  margin-top: 7%;
+.second{
+  margin-top: 6%;
+}
+.third{
+  margin-top: 10%;
+}
+#loadOptions{
+  text-align: center;
+  font-size: 26px;
+  color: #444444;
 }

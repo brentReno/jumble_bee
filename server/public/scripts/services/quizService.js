@@ -1,4 +1,4 @@
-myApp.service('quizService',function(){
+myApp.service('quizService', function(){
   //establish words var to contain quiz words
   var words = [];
   //function to add quiz to words var
@@ -65,6 +65,7 @@ var emptyWords=function(){
       }//end else
     });//end show
   };//end login function
+
 
   return{
     addWords: addWords,

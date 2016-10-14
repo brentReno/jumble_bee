@@ -45,7 +45,7 @@ myApp.controller("homeController", ["$scope", '$http', "$location", 'quizService
   };
   //random click
   $scope.goRandom=function(){
-    $location.url("randomTest");
+    $location.url("/randomTest");
   };
 
   //create click
@@ -57,6 +57,7 @@ myApp.controller("homeController", ["$scope", '$http', "$location", 'quizService
     $scope.bee = document.getElementById("beePicture");
     $scope.bee.className += " dance";
   };
+  
   $scope.removeDance=function(){
     $scope.bee = document.getElementById("beePicture");
     $scope.bee.className = "beePic";

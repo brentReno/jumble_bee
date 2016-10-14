@@ -2,21 +2,29 @@
   <div class="opacity">
     <div class="options Area" ng-hide="showGame">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <p> You need to <strong> Load </strong> or <strong> Create </strong> a quiz to practice.</p>
+        <div class="col-md-6 col-md-offset-3" >
+          <p id="loadOptions"> You need to <strong> Load </strong> or <strong> Create </strong> a quiz to practice.</p>
         </div>
-          <div class="row quizOptions">
-            <div class=" col-md-6 col-md-offset-3">
+          <div class="row">
+            <div class="quizOptions imageContainer">
               <!-- Load Saved -->
-                <img class="col-md-3" src="../assets/images/bee-hive.png" ng-click="goLoad()"/>
+                <img class="col-md-4 quizOptions" src="../assets/images/bee-hive.png" ng-click="goLoad()" />
               <!-- Create New -->
-                <img class="col-md-3 second" src="../assets/images/honey.png" ng-click="goCreate()"/>
+                <img class="col-md-4  quizOptions second" src="../assets/images/honey.png" ng-click="goCreate()"/>
               <!-- Random -->
-                <img class="col-md-3 third " src="../assets/images/honey-jar.png" ng-click="goRandom()"/>
+                <img class="col-md-4 quizOptions third " src="../assets/images/honey-jar.png" ng-click="goRandom()"/>
+            </div>
+            </div>
+              <div class="row labels">
+                <div class="col-md-offset-3">
+                <p class="col-md-2 optionLabel">Load a Saved Quiz</p>
+                <p class="col-md-2 col-md-offset-1 optionLabel">Create a Quiz</p>
+                <p class="col-md-2 col-md-offset-1 optionLabel" >Take a Random Quiz</p>
+              </div>
               </div>
             </div>
       </div>
-    </div>
+
     <div class= "gameArea" ng-show="showGame">
       <div class="row">
         <div class="col-md-2" ng-repeat=" word in jumbledWords track by $index">
