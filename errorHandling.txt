@@ -1,8 +1,0 @@
-Bugs/Errors to handle: updated 10am 10-10.
-
-createQuiz could be dryer
-
-
-Numbers & special characters can be entered in create - caught by typo
-
-maybe run spell Check on randoms-- if time, do this

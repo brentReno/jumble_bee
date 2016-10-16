@@ -30,8 +30,16 @@ var emptyWords=function(){
       shuffle(arrayOfLetters);
       //join letters in a word
       var jumbledWord = arrayOfLetters.join("");
+      //check for same word
+      console.log("word:", wordToJumble);
+      console.log("changed word:", jumbledWord);
+      if(wordToJumble == jumbledWord){
+        shuffle(arrayOfLetters);
+      }
+      else{
       //push words to an array
       jumbledWords.push(jumbledWord);
+      }
     }
     return jumbledWords;
   };//end jumble
