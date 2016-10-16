@@ -114,8 +114,9 @@ margin-top: 2%;
   margin-bottom: 3%;
 font-size: 36px;
 }
-.sub{
+#sub {
   text-align: center;
+  font-size: 24px;
 }
 .imageContainer{
   display: block;
