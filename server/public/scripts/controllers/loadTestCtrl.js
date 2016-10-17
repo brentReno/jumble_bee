@@ -1,6 +1,6 @@
 var loadedQuiz;
 myApp.controller("loadTestController", ["$scope", '$http', '$location', "quizService",  function($scope, $http, $location, quizService){
-  console.log("Load Test");
+  // console.log("Load Test");
   //init function to load users tests.
   //get username
   $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
@@ -9,7 +9,7 @@ myApp.controller("loadTestController", ["$scope", '$http', '$location', "quizSer
   $scope.init = function(){
     //if not logged in
     if($scope.user === null){
-      console.log("must log In");
+      // console.log("must log In");
       // show please log in
       $scope.showLoad = false;
     }

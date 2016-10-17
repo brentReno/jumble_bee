@@ -7,12 +7,12 @@ var updatedWord;
 myApp.controller("createTestController", ["$scope","$http", "quizService", "$location",function($scope, $http, quizService, $location){
   //empty range
   var range =[];
-  console.log("This is Create");
+  // console.log("This is Create");
   //check for log in
   //get user data
   $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
     if($scope.user === null){
-      console.log("must log In");
+      // console.log("must log In");
       // show please log in
       $scope.showCreate = false;
     }
@@ -25,7 +25,7 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
   $scope.showOnError =false;
   // enter basic quiz data, show inputs for words
   $scope.showInputs = function(){
-    console.log("in showInputs");
+    // console.log("in showInputs");
     //collect the number of words
   if($scope.numWordsIn.six){
     numWords = $scope.numWordsIn.six;
@@ -40,7 +40,7 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
 
     //collect the name of the quiz
     quizName = $scope.nameIn;
-    console.log(numWords,quizName);
+    // console.log(numWords,quizName);
     $scope.showInputs= false;
     // create range
     for (var i = 0; i <numWords; i++) {
@@ -53,11 +53,11 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
   //collect words from inputs
   $scope.createQuiz= function(){
     quiz=[];
-    console.log("in create quiz");
+    // console.log("in create quiz");
     for (var i = 0; i < numWords; i++) {
       //get input data
       var word= document.getElementById(i+1).value;
-      console.log(word);
+      // console.log(word);
       //check for empty
       if(word===""){
         document.getElementById(i+1).setAttribute('placeholder', "Please enter a word.");
@@ -65,7 +65,7 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
       else{
       //put into an array
       quiz.push(word);
-      console.log(quiz);
+      // console.log(quiz);
       }
     }//end for
     if(quiz.length<numWords){
@@ -74,7 +74,7 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
     }
       //package in object
     var objectToSend ={ quiz_name:quizName, quiz:quiz, username: $scope.user.username};
-    console.log(objectToSend);
+    // console.log(objectToSend);
     //send to server
     $http({
       method:"POST",
@@ -104,15 +104,15 @@ myApp.controller("createTestController", ["$scope","$http", "quizService", "$loc
       updatedWord=document.getElementById(i+1).value;
       quiz.push(updatedWord);
     }
-    console.log(quiz);
+    // console.log(quiz);
     objectToSend ={ quiz_name:quizName, quiz:quiz, username: $scope.user.username};
-    console.log(objectToSend);
+    // console.log(objectToSend);
     $http({
       method:"POST",
       url:"/create",
       data: objectToSend
     }).then(function(data){
-      console.log("back from server with:",data);
+      // console.log("back from server with:",data);
       if(data.data.spelling === false){
         //show error display
         $scope.showOnError= true;

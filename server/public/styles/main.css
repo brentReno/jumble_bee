@@ -342,24 +342,6 @@ select{
   color: #444444;
 }
 
-.main{
-  height: 50px;
-  background-color: #444444;
-  border-top: 5px solid #BFC0C0;
-  position: relative;
-}
-.main #copy{
-  margin-top: 0;
-  margin-bottom:0;
-}
-.main .emailLink {
-  color: #ffd400;
-  font-size:14px;
-  font-weight: 100;
-  margin-bottom: 0;
-  margin-top: 5px;
-  margin-left: 25px;
-}
 .createInput{
   margin-bottom: 1%;
 }

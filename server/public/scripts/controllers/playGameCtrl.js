@@ -1,6 +1,6 @@
 var jumbledWords=[];
 myApp.controller("playGameController", ["$scope", "quizService", "$timeout", "$location",  function($scope, quizService, $timeout, $location){
-  console.log("This is Play ");
+  // console.log("This is Play ");
   //empty arrays
   $scope.quizWords = [];
   $scope.correctAnswers=[];
@@ -26,7 +26,7 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", "$l
   //check for quiz to display
   $scope.jumbledWords=jumbledWords;
     if($scope.jumbledWords.length < 1){
-      console.log("jumble is empty");
+      // console.log("jumble is empty");
       $scope.showGame = false;
       //load click
       $scope.goLoad =function(){
@@ -40,7 +40,7 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", "$l
     }
 
     else if( $scope.jumbledWords.length > 1) {
-      console.log("jumble is full");
+      // console.log("jumble is full");
       $scope.showGame = true;
     }
 
@@ -57,21 +57,21 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", "$l
     console.log(userAnswer);
     //compare the users answer to the answer key array
     if (userAnswer !== $scope.correctAnswers[index]){
-      console.log("in wrong");
-      console.log(document.getElementById(id).placeholder);
+      // console.log("in wrong");
+      // console.log(document.getElementById(id).placeholder);
       document.getElementById(id).placeholder="Try Again";
       document.getElementById(id).value ="";
     }
      else if(userAnswer == $scope.correctAnswers[index]){
        var increase;
        $scope.correct++;
-       console.log($scope.correct);
-       console.log($scope.correctAnswers.length);
+      //  console.log($scope.correct);
+      //  console.log($scope.correctAnswers.length);
        $scope.percent = $scope.correct/$scope.correctAnswers.length;
-       console.log($scope.percent);
+      //  console.log($scope.percent);
 
        if($scope.correct == 1){
-         console.log("show");
+        //  console.log("show");
          $scope.showBee = true;
         }
        else if($scope.correct > 1 && $scope.percent < 1){
@@ -80,28 +80,28 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", "$l
 
         }
       if($scope.percent == 1){
-        console.log("this will do something Awesome!!");
+        // console.log("this will do something Awesome!!");
         $scope.showBee = false;
         $timeout($scope.bounceBee, 500);
        }
 
   $scope.changeBee= function(){
      // in th else if
-     console.log("the else if is working!");
+    //  console.log("the else if is working!");
      //get image width and height
-     console.log("width:",document.getElementById('beeImage').style.width, "height:",document.getElementById('beeImage').style.height);
+    //  console.log("width:",document.getElementById('beeImage').style.width, "height:",document.getElementById('beeImage').style.height);
      // set percentage increase
      if($scope.correctAnswers.length<=6){
-      increase = 45;
-      console.log("increase:", increase);
+      increase = 55;
+      // console.log("increase:", increase);
     }
     else if($scope.correctAnswers.length<=12){
-      increase = 20;
-      console.log("increase:", increase);
+      increase = 25;
+      // console.log("increase:", increase);
     }
     else if($scope.correctAnswers.length<=18){
-      increase = 6;
-      console.log("increase:", increase);
+      increase = 18;
+      // console.log("increase:", increase);
     }
      //place width and height in a var
     //  var width = document.getElementById('beeImage').style.width;
@@ -122,7 +122,7 @@ myApp.controller("playGameController", ["$scope", "quizService", "$timeout", "$l
     };
   }
   $scope.bounceBee= function(){
-    console.log(document.getElementById("beeImage").getAttribute("class"));
+    // console.log(document.getElementById("beeImage").getAttribute("class"));
     var bee = document.getElementById("beeImage");
     bee.className += " bounce";
     $scope.showBee = true;

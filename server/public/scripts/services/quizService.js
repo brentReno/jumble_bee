@@ -4,18 +4,18 @@ myApp.service('quizService', function(){
   //function to add quiz to words var
   var addWords = function(quiz){
      words = quiz;
-     console.log("add words words:", words);
+    //  console.log("add words words:", words);
      return words;
   };
   //get the words for manipulation
   var getQuiz = function(){
-    console.log("get words words:", words);
+    // console.log("get words words:", words);
   return words;
 };
 
 var emptyWords=function(){
   words = [];
-  console.log("empty words:", words);
+  // console.log("empty words:", words);
   return words;
 };
 
@@ -31,8 +31,8 @@ var emptyWords=function(){
       //join letters in a word
       var jumbledWord = arrayOfLetters.join("");
       //check for same word
-      console.log("word:", wordToJumble);
-      console.log("changed word:", jumbledWord);
+      // console.log("word:", wordToJumble);
+      // console.log("changed word:", jumbledWord);
       if(wordToJumble == jumbledWord){
         shuffle(arrayOfLetters);
       }
@@ -58,10 +58,10 @@ var emptyWords=function(){
 
   //login function
   var logIn = function(){
-    console.log("inside login");
+    // console.log("inside login");
     lock.show(function(err,profile,token){
       if(err){
-        console.error("Log In error:", err);
+        // console.error("Log In error:", err);
       }//end error
       else{
         //save token
