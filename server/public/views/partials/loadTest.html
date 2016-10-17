@@ -3,12 +3,14 @@
         <div class="row">
           <h3 class="col-md-12 col-sm-12  heading load">Load a Quiz!</h3>
         </div>
-            <div class="row" ng-hide='showLoad'>
-              <div >
-                <p class="col-md-4 col-sm-4 col-sm-offset-4 col-md-offset-4" id="loadSub"> Please, <strong>log in</strong> to load your quizzes.</p>
-                <button ng-click="logIn()" class="col-md-2 col-md-offset-5 btn logIn"> Log In </button>
+        <div ng-hide='showLoad'>
+            <div class="row" >
+                <p class="col-md-4  col-md-offset-4 col-sm-4 col-sm-offset-4" id="loadSub"> Please, <strong>log in</strong> to load your quizzes.</p>
               </div>
+            <div class="row" >
+                <button ng-click="logIn()" class="col-md-2 col-md-offset-5  col-sm-2 col-sm-offset-5 btn logIn"> Log In </button>
             </div>
+        </div>
             <div ng-show="showLoad">
               <div class="row">
                 <select class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 dropdown"  name="userQuizzes" ng-model="selectedQuiz" ng-options= " quiz as quiz.name for quiz in savedQuizzes " ng-change="changedValue(selectedQuiz)">
