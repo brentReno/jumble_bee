@@ -61,7 +61,7 @@ var emptyWords=function(){
     // console.log("inside login");
     lock.show(function(err,profile,token){
       if(err){
-        // console.error("Log In error:", err);
+        console.error("Log In error:", err);
       }//end error
       else{
         //save token
