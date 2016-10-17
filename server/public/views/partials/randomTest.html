@@ -1,16 +1,16 @@
 <div class="container">
   <div class ="opacity">
     <div class="row">
-        <h3 class="col-md-12  heading load">Take a Random Quiz!</h3>
+        <h3 class="col-md-12 col-sm-12  heading load">Take a Random Quiz!</h3>
     </div>
     <div class="row" >
       <p id="randomSub"> Enter up to two words for the subject of the quiz. </p>
     </div>
-    <div class="col-md-6 col-md-offset-3 example">
+    <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 example">
       <p>Example: Winter and Sports</p>
     </div>
     <div class="row" ng-hide="showLoad">
-      <div class="col-md-6 col-md-offset-3 randomInputs">
+      <div class="col-md-6 col-md-offset-3  col-sm-5 col-sm-offset-4 randomInputs">
         <label>Word One</label>
         <input type="text" name="name" value="" ng-model="subjectOne"></input>
         <label>Word Two</label>
@@ -18,15 +18,15 @@
       </div>
     </div>
     <div class ="row" ng-hide="showLoad">
-      <button class="btn random col-md-2 col-md-offset-5" type="button" name="button" ng-click="randomQuiz()">Get Random Quiz</button>
+      <button class="btn random col-md-2 col-md-offset-5 col-sm-3 col-sm-offset-5" type="button" name="button" ng-click="randomQuiz()">Get Random Quiz</button>
     </div>
     <div class="row" ng-show="showLoad">
-      <div class="col-md-2 col-md-offset-5">
+      <div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5">
       <img src="/assets/images/ring-alt.svg"/>
     </div>
     </div>
     <div class="row">
-      <img src="../assets/images/honey-jar.png"  class="col-md-2 col-md-offset-5 logo"/>
+      <img src="../assets/images/honey-jar.png"  class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 logo"/>
     </div>
   </div>
 </div>

@@ -2,11 +2,11 @@
   <div class="opacity">
     <!-- not logged in -->
   <div class="row">
-    <h3 class="col-md-12 heading create"> Make a New Quiz!</h3>
+    <h3 class="col-md-12 col-sm-12 heading create"> Make a New Quiz!</h3>
   </div>
   <div ng-hide="showCreate" class="row">
-    <p class="col-md-4 col-md-offset-4" id="createSub"> Please, <strong>log in</strong> to create a quiz.</p>
-    <button ng-click="logIn()" class=" col-md-2 col-md-offset-5 btn logIn"> Log In </button>
+    <p class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" id="createSub"> Please, <strong>log in</strong> to create a quiz.</p>
+    <button ng-click="logIn()" class=" col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 btn logIn"> Log In </button>
   </div>
 
 <!-- Logged in -->
@@ -15,19 +15,19 @@
 <div class="row">
   <div class="inputDiv">
     <div  class ="row inputs" id="nameNum" >
-      <label class="col-md-2 col-md-offset-2"for="quantity">How many words?</label>
-      <div class="col-md-2">
+      <label class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-2"for="quantity">How many words?</label>
+      <div class="col-md-2 col-sm-2">
         <input  type="checkbox" id="quantity" ng-model="numWordsIn.six" ng-true-value=6> 6
         <input  type="checkbox" id="quantity" ng-model="numWordsIn.twelve" ng-true-value=12> 12
         <input  type="checkbox" id="quantity" ng-model="numWordsIn.eighteen" ng-true-value=18> 18
       </div>
-      <label class="col-md-2" for="name"> Give it a name!</label>
-      <input class="col-md-2" type="text" name="name" value="" id="name" placeholder="Ex: Birds Quiz"  ng-model="nameIn">
+      <label class="col-md-2 col-sm-2" for="name"> Give it a name!</label>
+      <input class="col-md-2 col-sm-2" type="text" name="name" value="" id="name" placeholder="Ex: Birds Quiz"  ng-model="nameIn">
     </div>
   </div>
 </div>
 <div class="row">
-  <button class="col-md-2 col-md-offset-5 btn next"  ng-click="showInputs()">Next</button>
+  <button class="col-md-2 col-md-offset-5  col-sm-2 col-sm-offset-5 btn next"  ng-click="showInputs()">Next</button>
 </div>
 
 </div>
@@ -36,26 +36,26 @@
 <div ng-hide="showInputs">
       <div class ="row inputalign">
       <div ng-repeat="i in range track by $index" name="quizInput">
-        <label class="col-md-2">Enter Word {{i+1}}</label>
-        <input class="col-md-2 createInput" type="text" value="" id={{i+1}} placeholder="Enter word here">
+        <label class="col-md-2 col-sm-2">Enter Word {{i+1}}</label>
+        <input class="col-md-2 col-sm-2 createInput" type="text" value="" id={{i+1}} placeholder="Enter word here">
     </div>
   </div>
   <div class="row">
-    <button ng-hide="showOnError" ng-repeat-end ng-click="createQuiz()" class="btn createbtn col-md-offset-5 col-md-2"> Create Quiz </button>
+    <button ng-hide="showOnError" ng-repeat-end ng-click="createQuiz()" class="btn createbtn col-md-offset-5 col-md-2 col-sm-offset-5 col-sm-2"> Create Quiz </button>
   </div>
 </div>
 <!-- If an error occurs -->
 <div ng-show="showOnError">
   <p class="errorHeader"> Oh No! Something is not quite right.</p>
-  <div class="col-md-4 col-md-offset-4 misspelled" ng-repeat=" word in wrongWords">
+  <div class="col-md-4 col-md-offset-4  col-sm-4 col-sm-offset-4 misspelled" ng-repeat=" word in wrongWords">
   <p class="entered"> You entered: <span>{{word.misspelled}}</span>.</p>
   <p class="suggested"> Did you mean: <span>{{word.suggested[0]}}, {{word.suggested[1]}}, {{word.suggested[2]}}, {{word.suggested[3]}}, {{word.suggested[4]}}</span>?</p>
 </div>
-<p class="col-md-4 col-md-offset-4 misspelled">Please fix your words, and try again</p>
-<button class="col-md-2 col-md-offset-5 btn tryAgain" ng-click="tryAgain()"> Try Again</button>
+<p class="col-md-4 col-md-offset-4  col-sm-4 col-sm-offset-4 misspelled">Please fix your words, and try again</p>
+<button class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 btn tryAgain" ng-click="tryAgain()"> Try Again</button>
 </div>
   <div class="row">
-    <img src="../assets/images/honey.png"  class="col-md-2 col-md-offset-5 logo"/>
+    <img src="../assets/images/honey.png"  class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 logo"/>
   </div>
 </div>
 

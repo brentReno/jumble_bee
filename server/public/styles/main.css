@@ -10,7 +10,7 @@ input{
     height: 575px;
 }
 .container{
-  background-image: url("/assets/images/honeycomb.svg");
+  background-image: url("/assets/images/honeycomb.svg"); 
   background-clip: content-box;
   height:575px;
 }
