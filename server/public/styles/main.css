@@ -345,3 +345,6 @@ select{
 .createInput{
   margin-bottom: 1%;
 }
+.homeImage:hover{
+    animation: dance 0.5s;
+  }
