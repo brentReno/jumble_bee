@@ -4,7 +4,6 @@ myApp.controller("loadTestController", ["$scope", '$http', '$location', "quizSer
   //init function to load users tests.
   //get username
   $scope.user = JSON.parse( localStorage.getItem( 'userProfile' ));
-  $scope.showLoadImage = true;
 
   $scope.init = function(){
     //if not logged in
@@ -19,7 +18,6 @@ myApp.controller("loadTestController", ["$scope", '$http', '$location', "quizSer
       $scope.showLoad= true;
 
       //get saved tests from Mongo
-      $scope.showLoadImage = false;
       $http({
         method:"GET",
         url:"/saved/"+$scope.user.username
