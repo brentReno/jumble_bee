@@ -11,16 +11,15 @@ Jumble Bee allows the user to practice spelling by looking at a jumbled up word,
 
 Technology
 -----------
-MongoDB
-Angular
-Node.JS
-Express
-Typo.js
+* MongoDB
+* Angular
+* Node.JS
+* Express
+* Typo.js
   * Used to spellcheck the words the user enters, in the create view.
-Retext.js
+* Retext.js
   * Used to limit the difficulty of the words returned on the randomly    
     generated lists. This is accomplished through counting syllables, and
     characters.
-Auth0
+* Auth0
   * Used to manage user logIn
-  
