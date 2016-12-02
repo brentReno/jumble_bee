@@ -24,7 +24,7 @@ if(process.env.MONGODB_URI !== undefined) {
     databaseURI = 'mongodb://localhost:27017/soloproject';
 }
 
- var MongoDB = mongoose.connect(mongoURI).connection;
+ var MongoDB = mongoose.connect(databaseURI).connection;
  // mongo db connection error handeling
 MongoDB.on('error', function (err) {
     console.log('mongodb connection error:', err);
