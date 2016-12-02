@@ -13,7 +13,17 @@ var syllableCount = require('./modules/syllableCount');
 var spellCheck = require('./modules/spellCheck');
 
 //set mongoose connection
- var mongoURI = 'mongodb://localhost:27017/soloproject';
+var databaseURI = '';
+// process.env.MONGODB_URI will only be defined if you
+// are running on Heroku
+if(process.env.MONGODB_URI !== undefined) {
+    // use the string value of the environment variable
+    databaseURI = process.env.MONGODB_URI;
+} else {
+    // use the local database server
+    databaseURI = 'mongodb://localhost:27017/soloproject';
+}
+
  var MongoDB = mongoose.connect(mongoURI).connection;
  // mongo db connection error handeling
 MongoDB.on('error', function (err) {
